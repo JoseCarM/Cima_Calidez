@@ -3,58 +3,59 @@ html {
 }
 
 body {
-margin: 0;
-}
-
-header {
-    background-image: url('./recursos/inicio/imagenDeFondoHeader.png');
-    background-size: cover;
-    background-position: bottom;
+    width: 100%;
+    margin: 0;
 }
 
 #contenedorLogo {
     display: flex;
+    width: 100%;
+    height: auto;
+    padding: 2% 0;
     justify-content: center;
-    background-color: rgba(251, 245, 234, 0);;
+    background-color: rgb(251, 245, 234);
+}
+
+nav {
+    background-color: rgb(251, 245, 234);
 }
 
 #imgHeader {
-    width: 90%;
-    max-width: 428px;
-    min-width: 417px;
-    max-height: 200px;
-    vertical-align: middle;
-    padding: 10px 10% 50px 10%;
-}
-nav {
-    background-color: rgba(251, 245, 234, 0);
+    width: 80%;
 }
 
 ul.estiloDelMenu {
     display: flex;
+    padding: 0;
     margin: 0;
-    padding: 0 0 0 1%;
+    font-size: 0.7rem;
 }
 
-
 li.estiloDelMenu {
-    display: inline-flex;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    width: 24%;
+    margin: 0 0.5%;
+    padding-bottom: 1.5%;
     font-weight: 600;
     color: rgb(0, 71, 18);
-    justify-items: start;
-    padding: 10px 20px 6px 20px;
-    margin: 0 1%;
     border: rgba(102, 75, 0, 0.7) 2px solid;
-    border-bottom: rgb(255, 255, 255) 2px solid;
-    cursor: pointer;
+    border-bottom: rgb(255, 255, 255) 3px solid;
+    border-top-left-radius: 12%;
+    border-top-right-radius: 12%;
     background-color: hsl(0, 0%, 100%);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 li.estiloDelMenu img{
-    display: none;
+    width: 60%;
+    padding-top: 10%;
+    padding-bottom: -1.5%;
+    pointer-events: none;
 }
+
+
 
 #navAlojamientos {
     z-index: 2;
@@ -75,14 +76,14 @@ li.estiloDelMenu img{
 #cuerpoDeContenido {
     z-index: 1;
     border-top: rgba(102, 75, 0, 0.7) 2px solid;
-    border-bottom: rgba(102, 75, 0, 0.7) 1px solid;
+    border-bottom: rgba(102, 75, 0, 0.7) 2px solid;
     width: 100%;
     position: relative;
     top: -2px;
     padding: 30px 0;
 }
 
-/*Seccion de contenido de ALojamiento y todos sus elementos*/
+/*Seccion de contenido de Alojamiento y todos sus elementos*/
 #contenidoDeAlojamientos {
     display: flex;
     align-items: center;
@@ -91,29 +92,29 @@ li.estiloDelMenu img{
 }
 
 #mensajeDeBienvenida {
+    width: 94%;
     margin: 0;
     border: 0;
-    padding: 1% 2%;
+    padding: 3%;
     font-weight: 600;
     font-size: 1.2rem;
     text-align: center;
     color: rgb(116, 72, 34);
-    min-width: 440px;
 }
 
 .miniaturaCabanas {
     display: block;
-    max-width: 406px;
+    width: 99%;
     background-color: rgb(207,215,191);
     border: hsl(0, 0%, 80%) solid 3px;
     padding: 0;
-    margin: 8px 1px;
+    margin: 8px 1%;
     justify-content: center;
 }
 
 .miniaturaCabanas img{
     display: block;
-    width: 380px;
+    width: 92%;
     border: hsl(0, 0%, 100%) 2px solid;
     padding: 3px;
     margin: 8px;
@@ -153,7 +154,7 @@ img.cabezaDePajaroEspejo {
 
 .miniaturaCabanas .seccionDetalles h2 {
     margin: 0;
-    padding: 0;
+    padding: 4px 0;
     color: hsl(0, 0%, 40%);
 }
 
@@ -219,12 +220,13 @@ img.cabezaDePajaroEspejo {
     font-weight: 600;
     font-size: 1.2rem;
     text-align: center;
-    color: rgb(116, 72, 34);
+    color: hsl(0, 0%, 65%);
 }
 
 #textoServicios {
     margin: 10px 20px 30px 20px;
     padding: 0;
+    color: rgb(116, 72, 34);
 }
 
 #contenidoDeServicios table, #contenidoDeServicios th, #contenidoDeServicios td{
@@ -234,12 +236,13 @@ img.cabezaDePajaroEspejo {
 }
 
 #contenidoDeServicios td{
-    max-width: 420px;
+    width: 49%;
 }
 
 .listasDeServicios {
     display: inline-flex;
-    justify-content: center;
+    justify-items: center;
+    align-content: flex-start;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
@@ -248,7 +251,7 @@ img.cabezaDePajaroEspejo {
 
 .listasDeServicios li {
     display: flex;
-    width: 200px;
+    width: 100%;
     align-items: center;
     justify-items: left;
     text-align: left;
@@ -262,7 +265,7 @@ img.cabezaDePajaroEspejo {
 }
 /*Contenido de Ubicacion*/
 #contenidoDeUbicacion iframe {
-    width: 92%;
+    width: 90%;
     height: 600px;
     padding: 2%;
     margin: 2%;
@@ -271,11 +274,11 @@ img.cabezaDePajaroEspejo {
 }
 
 #textoDeUbicacion {
-    padding: 0 3%;
+    padding: 0 4%;
     border: 0;
     margin: 0;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     color: rgb(116, 72, 34);
 }
