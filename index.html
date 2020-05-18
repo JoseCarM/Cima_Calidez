@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Cima Calidez</title>
+        <link rel="stylesheet" media="screen and (min-width: 560px)" href="./estiloInicioCima.css" type="text/css">
+        <link rel="stylesheet" media="screen and (max-width: 560px)" href="./estiloInicioMovilCima.css" type="text/css">
+        <script type='text/javascript' src="./eventosCima.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div id = 'contenedorLogo'>
+                <img id = 'imgHeader' src="./recursos/inicio/imgheader.png">
+            </div>
+            <nav> <!--Incluí Nav en Header para que comparta el mismo background que el logo-->
+                <ul class = 'estiloDelMenu'>
+                    <li class = 'estiloDelMenu' id = 'navAlojamientos'><img src="./recursos/inicio/iconos/casa-color.svg" alt="Alojamientos">Alojamientos</li>
+                    <li class = 'estiloDelMenu' id = 'navServicios'><img src="./recursos/inicio/iconos/servicios-color.svg" alt="Servicios">Servicios</li>
+                    <li class = 'estiloDelMenu' id = 'navUbicacion'><img src="./recursos/inicio/iconos/Ubicacion.svg" alt="Ubicacion">Ubicación</li>
+                    <li class = 'estiloDelMenu' id = 'navConocenos'><img src="./recursos/inicio/iconos/conocenos-color.svg" alt="Conocenos">Conócenos</li>
+                </ul>
+            </nav>
+        </header>
+        <div id = 'cuerpoDeContenido'>
+            <div id = 'contenidoDeAlojamientos'>
+                <div>
+                    <p id = 'mensajeDeBienvenida'>
+                        Bienvenido a nuestro sitio web, a continuación puede ver nuestras cabañas a detalle y reservar por Airbnb® ,
+                        pero si lo prefiere, también puede realizar su reservación por otros medios haciendo clic en la pestaña de contacto
+                    </p>
+                </div>
+                <div class = 'miniaturaCabanas' id = 'miniaturaCabana1'>    <!-- Miniatura de cabaña 1-->
+                    <img src="./recursos/inicio/portadaCab1.png">
+                    <div class = 'seccionDetalles'>
+                        <div class = 'nombreDeCabanas'>
+                            <img class = 'cabezaDePajaro' src="./recursos/inicio/cabezaUltramarina.png" alt="">
+                            <h2>Cabaña<br>Ultramarina</h2>
+                            <img class = 'cabezaDePajaro cabezaDePajaroEspejo'src="./recursos/inicio/cabezaUltramarina.png" alt="">
+                        </div>
+                        <h3>Ideal para hacer viajes en grupo, espacios acojedores para pasar un buen rato</h3>
+                        <table>
+                            <tr>
+                                <td>12 Huespedes max.</td>
+                                <td>3 Recamaras</td>
+                                <td>2 Baños</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class = 'seccionBotones'>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonMasDetallesCab1'>
+                            <p>Más detalles</p>
+                            <img src="./recursos/inicio/iconos/armchair.svg" alt="Más detalles">
+                        </div>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonReservarCab1'>
+                            <p>Reservar</p>
+                            <img src="./recursos/inicio/iconos/booking.svg" alt="Reservar">
+                        </div>
+                    </div>
+                </div>
+                <div class = 'miniaturaCabanas' id = 'miniaturaCabana2'>    <!-- Miniatura de cabaña 2-->
+                    <img src="./recursos/inicio/portadaCab2.png">
+                    <div class = 'seccionDetalles'>
+                        <div class = 'nombreDeCabanas'>
+                            <h2>Cabaña<br>Occidentalis</h2>
+                        </div>
+                        <h3>La tranquilidad es optima, bastante acogedora para segurar un buen decanso</h3>
+                        <table>
+                            <tr>
+                                <td>6 Huespedes max.</td>
+                                <td>2 Recamaras</td>
+                                <td>1 Baño</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class = 'seccionBotones'>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonMasDetallesCab2'>
+                            <p>Más detalles</p>
+                            <img src="./recursos/inicio/iconos/armchair.svg" alt="Más detalles">
+                        </div>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonReservarCab2'>
+                            <p>Reservar</p>
+                            <img src="./recursos/inicio/iconos/booking.svg" alt="Reservar">
+                        </div>
+                    </div>
+                </div>
+                <div class = 'miniaturaCabanas' id = 'miniaturaCabana3'>    <!-- Miniatura de cabaña 3-->
+                    <img src="./recursos/inicio/portadaCab3.png">
+                    <div class = 'seccionDetalles'>
+                        <div class = 'nombreDeCabanas'>
+                            <h2>Cabaña<br>Melanocephalus</h2>
+                        </div>
+                        <h3>Con buena vista, se disfruta mucho la compañia de amigos y familia</h3>
+                        <table>
+                            <tr>
+                                <td>8 Huespedes max.</td>
+                                <td>3 Recamaras</td>
+                                <td>1 Baño</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class = 'seccionBotones'>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonMasDetallesCab3'>
+                            <p>Más detalles</p>
+                            <img src="./recursos/inicio/iconos/armchair.svg" alt="Más detalles">
+                        </div>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonReservarCab3'>
+                            <p>Reservar</p>
+                            <img src="./recursos/inicio/iconos/booking.svg" alt="Reservar">
+                        </div>
+                    </div>
+                </div>
+                <div class = 'miniaturaCabanas' id = 'miniaturaCabana4'>    <!-- Miniatura de cabaña 4-->
+                    <img src="./recursos/inicio/portadaCab4.png">
+                    <div class = 'seccionDetalles'>
+                        <div class = 'nombreDeCabanas'>
+                            <h2>Cabaña<br>Leucotis</h2>
+                        </div>
+                        <h3>Si viajas en pareja está es la opción que buscas, aun así en familia es genial</h3>
+                        <table>
+                            <tr>
+                                <td>6 Huespedes max.</td>
+                                <td>2 Recamaras</td>
+                                <td>2 Baños</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class = 'seccionBotones'>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonMasDetallesCab4'>
+                            <p>Más detalles</p>
+                            <img src="./recursos/inicio/iconos/armchair.svg" alt="Más detalles">
+                        </div>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonReservarCab4'>
+                            <p>Reservar</p>
+                            <img src="./recursos/inicio/iconos/booking.svg" alt="Reservar">
+                        </div>
+                    </div>
+                </div>
+                <div class = 'miniaturaCabanas' id = 'miniaturaCabana5'>    <!-- Miniatura de cabaña 5-->
+                    <img src="./recursos/inicio/portadaCab5.png">
+                    <div class = 'seccionDetalles'>
+                        <div class="nombreDeCabanas">
+                            <h2>Cabaña<br>Mexicanus</h2>
+                        </div>
+                        <h3>Bastante versatil, buenos momentos en pareja y excelentes convivios en grupo</h3>
+                        <table>
+                            <tr>
+                                <td>8 Huespedes max.</td>
+                                <td>3 Recamaras</td>
+                                <td>2 Baños</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class = 'seccionBotones'>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonMasDetallesCab5'>
+                            <p>Más detalles</p>
+                            <img src="./recursos/inicio/iconos/armchair.svg" alt="Más detalles">
+                        </div>
+                        <div class = 'botonesMiniaturasCabanas' id = 'botonReservarCab5'>
+                            <p>Reservar</p>
+                            <img src="./recursos/inicio/iconos/booking.svg" alt="Reservar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id = 'contenidoDeServicios'>
+                <p id = 'textoServicios'>Nos aseguramos de poder cubrir sus necesidades<br>Al rentar una
+                    cabaña con nosotros le ofrecemos las siguientes amenidades</p>
+                <table>
+                    <tr>
+                        <th>Equipamento</th>
+                        <th>Insumos</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class = 'listasDeServicios'>
+                                <li><img src="./recursos/inicio/iconos/Refrigerador.svg" alt="Refrigerador">Refrigerador</li>
+                                <li><img src="./recursos/inicio/iconos/estufa.svg" alt="Estufa">Estufa</li>
+                                <li><img src="./recursos/inicio/iconos/Tarja.svg" alt="Tarja">Tarja</li>
+                                <li><img src="./recursos/inicio/iconos/Microondas.svg" alt="Microondas">Microondas</li>
+                                <li><img src="./recursos/inicio/iconos/Horno electrico.svg" alt="Horno electrico">Horno electrico</li>
+                                <li><img src="./recursos/inicio/iconos/Cafetera.svg" alt="Cafetera">Cafetera</li>
+                                <li><img src="./recursos/inicio/iconos/Licuadora.svg" alt="Licuadora">Licuadora</li>
+                                <li><img src="./recursos/inicio/iconos/Ollas.svg" alt="Ollas">Bateria de cocina y utensilios</li>
+                                <li><img src="./recursos/inicio/iconos/Platos y cubiertos.svg" alt="Platos y cubiertos">Platos y cubiertos</li>
+                                <li><img src="./recursos/inicio/iconos/TV.svg" alt="TV">TV de 32" con entradas HDMI y servicio de cable</li>
+                                <li><img src="./recursos/inicio/iconos/Chimenea.svg" alt="Chimenea">Chimenea</li>
+                                <li><img src="./recursos/inicio/iconos/Boiler.svg" alt="Boiler">Boiler</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class = 'listasDeServicios'>
+                                <li><img src="./recursos/inicio/iconos/Papel de baño.svg" alt="Papel de Baño">Papel de Baño</li>
+                                <li><img src="./recursos/inicio/iconos/Jabon y shampoo.svg" alt="Jabon y Shampoo">Jabon y Shampoo</li>
+                                <li><img src="./recursos/inicio/iconos/Toallas.svg" alt="Toallas">Toallas para manos y cuerpo</li>
+                                <li><img src="./recursos/inicio/iconos/Ropa de cama.svg" alt="Ropa de cama">Sabanas y ropa de cama</li>
+                                <li><img src="./recursos/inicio/iconos/Garrafon.svg" alt="Garrafon de agua">Garrafon de agua</li>
+                                <li><img src="./recursos/inicio/iconos/Sal-azucar-aceite.svg" alt="Sal, Azucar y Aceite">Sal, Azucar y Aceite</li>
+                                <li><img src="./recursos/inicio/iconos/cafe.svg" alt="Cafe">Cafe</li>
+                                <li><img src="./recursos/inicio/iconos/cerillos.svg" alt="Cerillos">Cerillos</li>
+                                <li><img src="./recursos/inicio/iconos/leña.svg" alt="leña">Carga de leña por noche</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan = "2">Fuera de la cabaña</th>
+                    </tr>
+                    <tr>
+                        <td colspan = "2">
+                            <ul class = 'listasDeServicios'>
+                                <li><img src="./recursos/inicio/iconos/asador.svg" alt="Asador">Asador</li>
+                                <li><img src="./recursos/inicio/iconos/wifi.svg" alt="Wifi">Red Wifi <br>(Max. 3MBytes/s)</li>
+                                <li><img src="./recursos/inicio/iconos/Trampolin.svg" alt="Trampolin">Area para niños con Trampolin</li>
+                                <li><img src="./recursos/inicio/iconos/escoba.svg" alt="Escoba">Escoba, recogedor, cubeta y trapeador</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id = 'contenidoDeUbicacion'>
+                <div id = "textoDeUbicacion">
+                    <h3>
+                        Nos encontramos en el municipio de Mazamitla, Jalisco <br>
+                        100 metros antes de ingresar al fraccionamiento Los Cazos
+                    </h3>
+                    <h5>Dirección: Paseo de los Cazos #100 - C.P. 49500<br></h5>
+                    <h4>Nos encontramos en Google Maps!</h4>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.3974966252076!2d-103.03429138572099!3d19.907647530478435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f08e331ab1ee3%3A0x75786f98bb82c4b5!2sCaba%C3%B1as%20Cima%20Calidez!5e0!3m2!1ses-419!2smx!4v1588643668388!5m2!1ses-419!2smx" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div id = 'contenidoDeConocenos'>
+                <h1>Conócenos</h1>
+            </div>
+        </div>
+        <footer>
+        
+        </footer>
+    </body>
+</html>
