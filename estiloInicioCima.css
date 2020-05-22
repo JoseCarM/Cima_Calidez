@@ -3,7 +3,8 @@ html {
 }
 
 body {
-margin: 0;
+    width: 100%;
+    margin: 0;
 }
 
 header {
@@ -82,7 +83,7 @@ li.estiloDelMenu img{
     padding: 30px 0;
 }
 
-/*Seccion de contenido de ALojamiento y todos sus elementos*/
+/*Seccion de contenido de Alojamiento y todos sus elementos*/
 #contenidoDeAlojamientos {
     display: flex;
     align-items: center;
@@ -98,7 +99,6 @@ li.estiloDelMenu img{
     font-size: 1.2rem;
     text-align: center;
     color: rgb(116, 72, 34);
-    min-width: 440px;
 }
 
 .miniaturaCabanas {
@@ -111,7 +111,7 @@ li.estiloDelMenu img{
     justify-content: center;
 }
 
-.miniaturaCabanas img{
+.imgPortadaCabanas {
     display: block;
     width: 380px;
     border: hsl(0, 0%, 100%) 2px solid;
@@ -278,4 +278,83 @@ img.cabezaDePajaroEspejo {
     font-size: 1.2rem;
     text-align: center;
     color: rgb(116, 72, 34);
+}
+
+/*Media query para dispositivos moviles*/
+@media screen and (max-width: 560px) {
+    /*Secciòn de alojamientos*/
+    #contenedorLogo {
+        width: 100%;
+        padding: 2% 0;
+    }
+
+    #imgHeader {
+        width: 80%;
+        min-width: 0;
+        padding: 5%;
+    }
+
+    ul.estiloDelMenu {
+        padding: 0;
+        font-size: 0.7rem;
+    }
+
+    li.estiloDelMenu {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+        width: 24%;
+        margin: 0 0.5%;
+        padding: 0;
+        padding-bottom: 1.5%;
+        border-bottom: rgb(255, 255, 255) 3px solid;
+        border-top-left-radius: 12%;
+        border-top-right-radius: 12%;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    li.estiloDelMenu img{
+        display: block;
+        width: 60%;
+        padding-top: 10%;
+        padding-bottom: -1.5%;
+        pointer-events: none;
+    }
+    
+    #mensajeDeBienvenida {
+        width: 94%;
+        padding: 3%;
+    }
+
+    .miniaturaCabanas {
+        width: 99%;
+    }
+
+    .imgPortadaCabanas {
+        width: 92%;
+    }
+
+    /*Sección de servicios*/
+    #contenidoDeServicios td{
+        width: 49%;
+    }
+
+    .listasDeServicios {
+        align-content: flex-start;
+    }
+
+    .listasDeServicios li {
+        width: 100%;
+    }
+
+    /*Sección de Ubicación*/
+    #contenidoDeUbicacion iframe {
+        width: 90%;
+    }
+
+    #textoDeUbicacion {
+        padding: 0 4%;
+        font-size: 1rem;
+    }
 }
