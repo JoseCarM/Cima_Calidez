@@ -32,15 +32,26 @@ nav ul a {
     font-weight: 600;
     border-left: hsl(0, 0%, 80%) solid 0.75px;
     border-right: hsl(0, 0%, 80%) solid 0.75px;
-    border-bottom: hsl(0, 0%, 80%) solid 3px;
+    border-bottom: hsl(0, 0%, 80%) solid 1.5px;
     text-decoration: none;
 }
 
+#logo {
+    padding: 10px;
+    max-width: 65px;
+}
 
 #logo img {
-    width: 50%
+    width: 100%;
+    max-width: 55px;
 }
 
 #tabActivo {
     border-bottom: none;
+}
+
+@media screen and (max-width: 750px){
+    nav ul a{
+        font-size: 0.8rem;
+    }
 }
