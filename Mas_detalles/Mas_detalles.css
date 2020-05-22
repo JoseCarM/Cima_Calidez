@@ -1,0 +1,46 @@
+html {
+    font-family: Helvetica, sans-serif; 
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+}
+
+#logo img {
+    max-width: 100%;
+}
+
+nav ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    display: inline-flex;
+    width: 16.666667%;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+    color: hsl(0, 0%, 40%);
+    font-size: 1rem;
+    font-weight: 600;
+    border-left: hsl(0, 0%, 80%) solid 0.75px;
+    border-right: hsl(0, 0%, 80%) solid 0.75px;
+    border-bottom: hsl(0, 0%, 80%) solid 3px;
+    text-decoration: none;
+}
+
+
+#logo img {
+    width: 50%
+}
+
+#tabActivo {
+    border-bottom: none;
+}

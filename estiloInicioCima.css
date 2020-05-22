@@ -184,6 +184,7 @@ img.cabezaDePajaroEspejo {
     background-color: hsl(0, 0%, 100%);
     border: hsl(0, 0%, 80%) 1px solid;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .botonesMiniaturasCabanas p {
