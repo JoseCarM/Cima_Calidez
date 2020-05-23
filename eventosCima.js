@@ -31,7 +31,7 @@ idBotonesDeMiniaturas.forEach(function(boton){
     elementosBotonesMiniaturas.push(document.getElementById(boton));
 });
 
-//Cambio de coloracion de botones de miniaturas
+//Event handlers de los botones de index.html
 elementosDeNav.forEach(botonesNav)
 elementosBotonesMiniaturas.forEach(botonesMiniaturas);
 

@@ -60,11 +60,16 @@ nav ul a {
 /* Termina diseño de todo en Header e inicia en Main */
 main {
     padding-top: 65px;
+    display: flex;
+    justify-content: center;
 }
 /* Inicia diseño de Galeria de fotos */
+
 #galeria {
     display: inline-flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 #galeria img{
@@ -72,27 +77,23 @@ main {
     border-radius: 15px;
 }
 
-.galeria {
-    justify-content: center;
-    align-items: end;
-}
-
 #galPrimaria {
-    width: 470px;
-    height: 320px;
+    max-width: 470px;
+    max-height: 320px;
     display: flex;
-    box-sizing: content-box;
 }
 
 #galPrimaria img{
     width: 100%;
 }
 
+.botonesGaleria {
+    width: 10%;
+}
+
 #galSecundaria {
-    width: 470px;
-    height: 320px;
-    display: block;
-    box-sizing: content-box;
+    max-width: 470px;
+    max-height: 304px;
 }
 
 .subGaleria {
