@@ -63,8 +63,8 @@ main {
     display: flex;
     justify-content: center;
 }
-/* Inicia diseño de Galeria de fotos */
 
+/* Inicia diseño de Galeria de fotos */
 #galeria {
     display: inline-flex;
     flex-wrap: wrap;
@@ -87,8 +87,12 @@ main {
     width: 100%;
 }
 
-.botonesGaleria {
-    width: 10%;
+.botonesGaleria{
+    width: 15%;  
+}
+
+#botonGaleriaDer {
+    float: right;
 }
 
 #galSecundaria {
@@ -103,10 +107,12 @@ main {
 }
 
 #subGal1 img {
-    width: 49%;
+    max-width: 49%;
+    max-height: 157px;
 }
 
 #subGal2 img {
-    width: 19%;
+    max-width: 19%;
+    max-height: 60px;
 }
 /* Termina diseño de Galeria de fotos */

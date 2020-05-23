@@ -39,9 +39,8 @@ const renderGaleria = (inicio) => { //Se añaden los src correspondientes a los 
         if(indiceDeLoop >= galeriaActivaSrc.length){
             indiceDeLoop = 0;
         } else if (indiceDeLoop < 0){
-            indiceDeLoop= galeriaActivaSrc.length;
+            indiceDeLoop = galeriaActivaSrc.length;
         }
-        console.log(indiceDeLoop);
         minisGaleriaIds[i].src = galeriaActivaSrc[indiceDeLoop];
         indiceDeLoop++; //          ^RESTRICCION 3: Otorgar un array con los src de cada imagen
     }
@@ -59,7 +58,7 @@ botonesDeGaleria[0].onclick = () => {   //Boton para visualizar a la izquierda
     if (indice <= galeriaActivaSrc.length && indice >= 0){
         indice++;
     }
-    if (indice > galeriaActivaSrc.length) {
+    if (indice >= galeriaActivaSrc.length) {
         indice = 0;
     } 
     renderGaleria(indice);
@@ -69,7 +68,7 @@ botonesDeGaleria[1].onclick = () => {   //Boton para visualizar a la derecha
         indice--;
     }
     if (indice < 0) {
-        indice = galeriaActivaSrc.length;
+        indice = galeriaActivaSrc.length - 1;
     }
     renderGaleria(indice);
 }
