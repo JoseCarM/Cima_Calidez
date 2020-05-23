@@ -6,9 +6,11 @@ body {
     width: 100%;
     margin: 0;
 }
-
+/* Inicia diseño de todo en Header */
 header {
     width: 100%;
+    position: fixed;
+    background-color: white;
 }
 
 #logo img {
@@ -55,3 +57,55 @@ nav ul a {
         font-size: 0.8rem;
     }
 }
+/* Termina diseño de todo en Header e inicia en Main */
+main {
+    padding-top: 65px;
+}
+/* Inicia diseño de Galeria de fotos */
+#galeria {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+#galeria img{
+    padding: 2px;
+    border-radius: 15px;
+}
+
+.galeria {
+    justify-content: center;
+    align-items: end;
+}
+
+#galPrimaria {
+    width: 470px;
+    height: 320px;
+    display: flex;
+    box-sizing: content-box;
+}
+
+#galPrimaria img{
+    width: 100%;
+}
+
+#galSecundaria {
+    width: 470px;
+    height: 320px;
+    display: block;
+    box-sizing: content-box;
+}
+
+.subGaleria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#subGal1 img {
+    width: 49%;
+}
+
+#subGal2 img {
+    width: 19%;
+}
+/* Termina diseño de Galeria de fotos */
