@@ -50,9 +50,12 @@ renderGaleria(0); //indice 0 es el default de la galeria
 
 
 
-//Inicio de eventos onclick para botones de galeria
+//Inicio de eventos para botones de galeria
 let indice = 0;
 let botonesDeGaleria = [document.getElementById('botonGaleriaIzq'), document.getElementById('botonGaleriaDer')];
+
+botonesDeGaleria.forEach( boton => boton.onmousedown = () => event.target.style.width = '13%');
+botonesDeGaleria.forEach( boton => boton.onmouseup = () => event.target.style.width = '');
 
 botonesDeGaleria[0].onclick = () => {   //Boton para visualizar a la izquierda
     if (indice <= galeriaActivaSrc.length && indice >= 0){
@@ -72,5 +75,5 @@ botonesDeGaleria[1].onclick = () => {   //Boton para visualizar a la derecha
     }
     renderGaleria(indice);
 }
-//Fin de eventos onclick para botones de galeria 
+//Fin de eventos para botones de galeria 
 

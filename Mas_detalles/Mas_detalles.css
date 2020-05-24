@@ -60,8 +60,31 @@ nav ul a {
 /* Termina diseño de todo en Header e inicia en Main */
 main {
     padding-top: 65px;
+}
+
+#titulo {
+    display: flex;
+}
+
+#textoTitulo {
+    padding: 0 10%;
+}
+
+#imagenTitulo {
+    display: flex;
+    align-items: flex-end;
+    flex-flow: row-reverse;
+}
+
+#imagenTitulo img{
+    padding-top: 20px;
+    width: 200px;
+}
+
+#bloqueGaleria {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Inicia diseño de Galeria de fotos */
@@ -87,12 +110,20 @@ main {
     width: 100%;
 }
 
-.botonesGaleria{
-    width: 15%;  
+#contenedorBotonesGaleria {
+    border: rgb(51, 170, 184) solid 1.5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#botonGaleriaDer {
-    float: right;
+.botonesGaleria{
+    width: 15%;
+    cursor: pointer;
 }
 
 #galSecundaria {
