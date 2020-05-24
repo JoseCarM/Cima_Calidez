@@ -1,6 +1,16 @@
 html {
-    font-family: Helvetica, sans-serif; 
+    font-family: Helvetica, sans-serif;
+    /* -webkit-tap-highlight-color: transparent; */  /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
 }
+
+/* .noSeleccionar {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;          Clase para que el usuario no resalte el elemento
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
 
 body {
     width: 100%;
@@ -31,15 +41,18 @@ nav {
     background-color: rgba(251, 245, 234, 0);
 }
 
-ul.estiloDelMenu {
+#menu {
     display: flex;
     margin: 0;
     padding: 0 0 0 1%;
+    align-items: flex-end;
+    height: 33px;
 }
 
 
-li.estiloDelMenu {
+.elementoDelMenu {
     display: inline-flex;
+    height: 18px;
     font-weight: 600;
     color: rgb(0, 71, 18);
     justify-items: start;
@@ -51,9 +64,14 @@ li.estiloDelMenu {
     background-color: hsl(0, 0%, 100%);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: all 0.25s;
 }
 
-li.estiloDelMenu img{
+.elementoDelMenu:hover {
+    padding-bottom: 15px;
+}
+
+.elementoDelMenu img{
     display: none;
 }
 
@@ -185,6 +203,19 @@ img.cabezaDePajaroEspejo {
     border: hsl(0, 0%, 80%) 1px solid;
     box-sizing: border-box;
     text-decoration: none;
+    transition: all 0.6s;
+}
+
+.botonesMiniaturasCabanas:hover {
+    background-color: hsl(0, 0%, 95%);
+    border: hsl(0, 0%, 75%) 2px solid;
+    transition: all 0.45s;
+}
+
+.botonesMiniaturasCabanas:active {
+    background-color: rgb(207,215,191);
+    border: hsl(0, 0%, 75%) 5px solid;
+    transition: all 0.2s;
 }
 
 .botonesMiniaturasCabanas p {
@@ -295,17 +326,19 @@ img.cabezaDePajaroEspejo {
         padding: 5%;
     }
 
-    ul.estiloDelMenu {
+    #menu {
         padding: 0;
         font-size: 0.7rem;
+        height: auto;
     }
 
-    li.estiloDelMenu {
+    .elementoDelMenu {
         display: flex;
         flex-flow: column;
         align-items: center;
         text-align: center;
         width: 24%;
+        height: auto;
         margin: 0 0.5%;
         padding: 0;
         padding-bottom: 1.5%;
@@ -315,7 +348,11 @@ img.cabezaDePajaroEspejo {
         background-color: hsl(0, 0%, 100%);
     }
 
-    li.estiloDelMenu img{
+    .elementoDelMenu:hover {
+        padding-bottom: 1.5%;
+    }
+
+    .elementoDelMenu img{
         display: block;
         width: 60%;
         padding-top: 10%;
