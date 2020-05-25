@@ -1,5 +1,7 @@
 html {
-    font-family: Helvetica, sans-serif; 
+    font-family: Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
 }
 
 body {
@@ -81,13 +83,52 @@ main {
     width: 200px;
 }
 
+/* Inicia diseño de Galeria de fotos */
 #bloqueGaleria {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Inicia diseño de Galeria de fotos */
+#pantallaCompleta {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#imagenPantallaCompleta {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+#opcionesPantallaCompleta {
+    display: flex;
+    padding-top: 2vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botonesPantallaCompleta {
+    width: 15%;
+    max-height: 10vh;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.botonesPantallaCompleta:active {
+    width: 15%;
+    max-height: 8vh;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
 #galeria {
     display: inline-flex;
     flex-wrap: wrap;
@@ -101,19 +142,20 @@ main {
 }
 
 #galPrimaria {
-    max-width: 470px;
+    width: 470px;
     max-height: 320px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #galPrimaria img{
-    width: 100%;
+    max-width: 100%;
 }
 
 #contenedorBotonesGaleria {
     border: rgb(51, 170, 184) solid 1.5px;
     border-radius: 10px;
-    box-sizing: border-box;
     box-sizing: border-box;
     max-height: 80px;
     display: flex;
@@ -121,20 +163,45 @@ main {
     justify-content: space-between;
 }
 
-.botonesGaleria{
+#galeria .botonesGaleria {
     width: 15%;
     cursor: pointer;
+    transition: all 0.1s;
+}
+
+#galeria .botonesGaleria:active {
+    width: 13%;
+    transition: all 0.1s;
+}
+
+#botonGaleriaIzq:active {
+    padding: 0 3px 0 2%;
+    transition: all 0.1s;
+}
+
+#botonGaleriaDer:active {
+    padding: 0 2% 0 3px;
+    transition: all 0.1s;
 }
 
 #galSecundaria {
     max-width: 470px;
     max-height: 304px;
+    align-items: flex-start;
 }
 
 .subGaleria {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+#subGal1 {
+    max-height: 157px;
+}
+
+#subGal2 {
+    max-height: 65px;
 }
 
 #subGal1 img {
@@ -144,6 +211,6 @@ main {
 
 #subGal2 img {
     max-width: 19%;
-    max-height: 60px;
+    max-height: 65px;
 }
 /* Termina diseño de Galeria de fotos */

@@ -1,6 +1,7 @@
 html {
     font-family: Helvetica, sans-serif;
-    /* -webkit-tap-highlight-color: transparent; */  /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
+    -webkit-tap-highlight-color: transparent;
+     /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
 }
 
 /* .noSeleccionar {
