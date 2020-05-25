@@ -2,6 +2,7 @@ html {
     font-family: Helvetica, sans-serif;
     -webkit-tap-highlight-color: transparent;
     /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
+    touch-action: manipulation;
 }
 
 body {
@@ -39,6 +40,8 @@ nav ul a {
     border-bottom: hsl(0, 0%, 80%) solid 1.5px;
     text-decoration: none;
 }
+
+
 
 #logo {
     padding: 10px;
