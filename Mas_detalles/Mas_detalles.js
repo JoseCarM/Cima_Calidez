@@ -43,8 +43,8 @@ switch (tabActivo){
 const desvanecido = (elemento, cambio, tiempoDeTransicion) => {
     elemento.style.transition = `all ${tiempoDeTransicion}ms`;
     setTimeout(() => { elemento.style.opacity = 0 }, 20);
-    setTimeout(cambio, tiempoDeTransicion + 20);   //>>>>>>>> Pendiente de justificar los 20ms adicionals !!!!!!! <<<<<<<<
-    setTimeout(() => { elemento.style.opacity = 1 }, tiempoDeTransicion + 20);
+    setTimeout(cambio, tiempoDeTransicion);   //>>>>>>>> Pendiente de justificar los 100ms adicionals !!!!!!! <<<<<<<<
+    setTimeout(() => { elemento.style.opacity = 1 }, tiempoDeTransicion + 100);
 }
 //Fin de logica para transiciones
 
@@ -105,10 +105,10 @@ const disminuyeIndice = () => {
     //Función para iterar el estado del boton play y la variable play
 const playPausa = () => {
     if (play){
-        botonesDeGaleria[2].src = "../recursos/Mas_detalles/botonGaleriaPlay.svg";
+        botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
         play = false;
     } else if (!play){
-        botonesDeGaleria[2].src = "../recursos/Mas_detalles/botonGaleriaPause.svg";
+        botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPause.svg";
         play = true;
     }
 }
@@ -138,7 +138,7 @@ setInterval(() => {
     //Al hacer click en cualquer imagen de la galeria
 minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     //El boton pausa cambia a play y se detiene la secuencia del carrete
-    botonesDeGaleria[2].src = "../recursos/Mas_detalles/botonGaleriaPlay.svg";
+    botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
     play = false;
     //Se identifica el indice de la imagen seleccionada y se le da un valor con el que se actualiza el inidce global
     let IndiceDeMiniatura = minisGaleriaIds.indexOf(document.getElementById(event.target.id));

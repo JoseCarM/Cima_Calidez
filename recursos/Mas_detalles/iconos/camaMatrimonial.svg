@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generado por Microsoft Visio, SVG Export camaMatrimonial.svg Página-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.555125in" height="0.960417in"
+		viewBox="0 0 39.969 69.15" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="3082" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#663700;stroke:#000000;stroke-width:0.75}
+		.st2 {fill:#efefef;stroke:#000000;stroke-width:0.75}
+		.st3 {fill:#538135;stroke:#000000;stroke-width:0.375}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Página-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Muebles móviles" v:index="0"/>
+		<v:layer v:name="Mobiliario" v:index="1"/>
+		<g id="group12-1" transform="translate(0.525434,-14.4)" v:mID="12" v:groupContext="group" v:layerMember="0;1">
+			<v:custProps>
+				<v:cp v:nameU="ShapeClass" v:lbl="Clase de forma" v:invis="true" v:langID="3082" v:val="VT4(Activo)"/>
+				<v:cp v:nameU="ShapeType" v:lbl="Tipo de forma" v:invis="true" v:langID="3082" v:val="VT4(Mobiliario)"/>
+				<v:cp v:nameU="SubShapeType" v:lbl="Tipo de subforma" v:invis="true" v:langID="3082" v:val="VT4(Cama)"/>
+				<v:cp v:nameU="ID" v:lbl="Id." v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="Name" v:lbl="Nombre" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="Department" v:lbl="Departamento" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="BelongsTo" v:lbl="Pertenece a" v:type="0" v:invis="true" v:langID="3082"/>
+				<v:cp v:nameU="Modify" v:lbl="Modificado" v:type="5" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="AssetNumber" v:lbl="Número de activo" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="SerialNumber" v:lbl="Número de serie" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="ProductDescription" v:lbl="Descripción del producto" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="PurchaseDate" v:lbl="Fecha de compra" v:type="5" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="ProductNumber" v:lbl="Número de producto" v:type="0" v:langID="3082"/>
+				<v:cp v:nameU="BaseElevation" v:lbl="Elevación de la base" v:type="2" v:langID="3082"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="3D_type" v:val="VT0(1):26"/>
+				<v:ud v:nameU="3D_model_id" v:val="VT4(bed, double)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(16):26"/>
+				<v:ud v:nameU="SolSH" v:val="VT4({5D50005D-537C-4738-9C46-130C74335A6D})"/>
+				<v:ud v:nameU="ShapeClass" v:prompt="Activo" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<title>Cama de matrimonio</title>
+			<g id="group13-2" v:mID="13" v:groupContext="group" v:layerMember="0;1">
+				<v:custProps>
+					<v:cp v:nameU="ShapeClass" v:lbl="Clase de forma" v:prompt="" v:sortKey="" v:invis="true" v:ask="false"
+							v:langID="3082" v:cal="0" v:val="VT4(Activo)"/>
+					<v:cp v:nameU="ShapeType" v:lbl="Tipo de forma" v:prompt="" v:sortKey="" v:invis="true" v:ask="false"
+							v:langID="3082" v:cal="0" v:val="VT4(Mobiliario)"/>
+					<v:cp v:nameU="SubShapeType" v:lbl="Tipo de subforma" v:prompt="" v:sortKey="" v:invis="true" v:ask="false"
+							v:langID="3082" v:cal="0" v:val="VT4(Cama)"/>
+					<v:cp v:nameU="ID" v:lbl="Id." v:prompt="" v:type="0" v:sortKey="" v:invis="false" v:ask="false"
+							v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="Name" v:lbl="Nombre" v:prompt="" v:type="0" v:sortKey="" v:invis="false" v:ask="false"
+							v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="Department" v:lbl="Departamento" v:prompt="" v:type="0" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="BelongsTo" v:lbl="Pertenece a" v:prompt="" v:type="0" v:sortKey="" v:invis="true" v:ask="false"
+							v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="Modify" v:lbl="Modificado" v:prompt="" v:type="5" v:sortKey="" v:invis="false" v:ask="false"
+							v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="AssetNumber" v:lbl="Número de activo" v:prompt="" v:type="0" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="SerialNumber" v:lbl="Número de serie" v:prompt="" v:type="0" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="ProductDescription" v:lbl="Descripción del producto" v:prompt="" v:type="0" v:sortKey=""
+							v:invis="false" v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="PurchaseDate" v:lbl="Fecha de compra" v:prompt="" v:type="5" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="ProductNumber" v:lbl="Número de producto" v:prompt="" v:type="0" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+					<v:cp v:nameU="BaseElevation" v:lbl="Elevación de la base" v:prompt="" v:type="2" v:sortKey="" v:invis="false"
+							v:ask="false" v:langID="3082" v:cal="0"/>
+				</v:custProps>
+				<v:userDefs>
+					<v:ud v:nameU="3D_type" v:prompt="" v:val="VT0(1):26"/>
+					<v:ud v:nameU="3D_model_id" v:prompt="" v:val="VT4(bed, double)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="SolSH" v:prompt="" v:val="VT4({5D50005D-537C-4738-9C46-130C74335A6D})"/>
+					<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(2):26"/>
+				</v:userDefs>
+				<title>Hoja.13</title>
+				<g id="shape14-3" v:mID="14" v:groupContext="shape" transform="translate(0.224566,-46.9754)">
+					<title>Hoja.14</title>
+					<path d="M0 62.13 L38.47 62.13 L38.47 63.33 L38.07 64.31 L38.07 69.15 L0.39 69.15 L0.39 64.31 L0 63.33 L0 62.13
+								 Z" class="st1"/>
+				</g>
+				<g id="shape15-5" v:mID="15" v:groupContext="shape" transform="translate(0.605995,-2.70006E-13)">
+					<title>Hoja.15</title>
+					<path d="M37.68 67.75 L37.68 19.01 C37.68 18.24 37.06 17.61 36.3 17.61 L1.38 17.61 C0.62 17.61 0 18.24 0 19.01
+								 L0 67.75 C0 68.52 0.62 69.15 1.38 69.15 L36.3 69.15 C37.06 69.15 37.68 68.52 37.68 67.75 Z"
+							class="st2"/>
+				</g>
+				<g id="shape16-7" v:mID="16" v:groupContext="shape">
+					<title>Hoja.16</title>
+					<path d="M38.89 44.96 L38.89 44.07 C38.89 44.04 38.84 40.76 38.84 40.73 C38.84 40.46 38.89 37.47 38.89 37.4 L38.89
+								 36.72 C38.89 36.61 38.8 36.52 38.69 36.52 L33.88 36.52 C33.85 36.52 28.98 36.46 27.99 36.52 C27.93
+								 36.52 21.61 36.47 20.71 36.47 C20.67 36.47 13.98 36.45 12.81 36.52 L0.22 36.52 C0.12 36.52 0.03
+								 36.61 0.03 36.72 L0.03 37.2 C0.03 37.26 0.01 37.8 0 38 C-0 38.04 0.17 42.26 0.03 44.32 L0.03 44.96
+								 C0.03 45.07 0.12 45.16 0.22 45.16 L1.51 45.16 C1.94 45.06 2.71 45.16 2.73 45.16 L3.61 45.16 C4.51
+								 45.06 6.87 45.16 6.91 45.16 L8.84 45.16 C10.03 45.26 12.27 45.16 12.31 45.16 C14.57 45.26 17.04
+								 45.15 17.08 45.15 C17.9 45.14 19.63 45.12 19.67 45.11 C20.15 45.1 21.18 45.08 21.22 45.08 C21.86
+								 45.06 23.07 45.07 23.11 45.07 C23.37 45.07 23.94 45.08 23.96 45.08 C24.23 45.06 24.84 45.09 24.87
+								 45.09 C25.69 45.09 27.41 45.09 27.45 45.09 C29.16 45.06 30.94 45.06 32.7 45.14 C32.74 45.14 33.73
+								 45.16 33.81 45.16 L38.69 45.16 C38.8 45.16 38.89 45.07 38.89 44.96 ZM38.54 45.16 L34.07 45.16 C33.99
+								 45.16 33 45.14 32.96 45.14 C31.19 45.06 29.42 45.06 27.71 45.09 C27.67 45.09 25.95 45.09 25.13 45.09
+								 C25.1 45.09 24.49 45.06 24.22 45.08 C24.19 45.08 23.62 45.07 23.37 45.07 C23.33 45.07 22.12 45.06
+								 21.48 45.08 C21.44 45.08 20.41 45.1 19.93 45.11 C19.89 45.12 18.16 45.14 17.34 45.15 C17.3 45.15
+								 14.83 45.26 12.57 45.16 C12.53 45.16 10.29 45.26 9.09 45.16 L7.17 45.16 C7.12 45.16 4.77 45.06 3.87
+								 45.16 L2.99 45.16 C2.97 45.16 2.2 45.06 1.77 45.16 L0.86 45.16 L0.86 67.75 C0.86 68.52 1.48 69.15
+								 2.25 69.15 L37.16 69.15 C37.92 69.15 38.54 68.52 38.54 67.75 L38.54 45.16 ZM20.93 35.66 C20.87 36.21
+								 21.86 35.41 22.14 35.25 C23.7 34.3 26.17 33.38 28.85 32.36 C31.54 31.34 36.57 30.83 37.68 30.83
+								 C38.55 30.83 38.16 30.37 38.16 30.37 C38.16 30.37 36.33 26.62 36.22 25.57 C36.1 24.53 35.62 23.65
+								 35.62 23.65 C35.62 23.65 35.23 22.62 35.09 22.09 C34.96 21.57 34.91 20.8 34.85 20.37 C34.78 19.93
+								 34.57 19.14 34.59 18.62 C34.6 18.1 34.08 18.3 34.08 18.3 C34.08 18.3 33.26 19.27 31.48 19.58 C29.7
+								 19.89 27.38 20.91 25.98 21.24 C25.69 21.31 24.98 21.37 24.78 21.4 C24.05 21.5 22.78 22.03 22.26
+								 22.22 C21.84 22.38 19 22.67 17.97 22.55 C16.93 22.42 17.54 23.16 17.54 23.16 C18.22 23.73 18.03
+								 25.63 18.68 27.31 C19.2 28.66 19.66 29.04 20.2 31.14 C21.27 35.34 20.93 35.66 20.93 35.66 ZM19.79
+								 29.98 C19.39 28.81 19.01 28.35 18.6 27.29 C17.96 25.61 18.15 23.71 17.47 23.14 C17.47 23.14 16.86
+								 22.4 17.9 22.53 C18.12 22.55 18.42 22.56 18.77 22.56 C18.57 21.92 18.07 20.94 17.91 20.39 C17.73
+								 19.77 17.79 17.86 17.79 17.86 C17.77 17.75 17.66 17.68 17.56 17.7 C17.56 17.7 15.35 18.73 14.69
+								 18.98 C13.23 19.52 10.15 20.03 8.64 20.41 C7.5 20.7 5.29 21.52 4.14 21.73 C3.35 21.87 0.86 21.8
+								 0.86 21.8 C0.75 21.82 0.68 21.92 0.7 22.03 C0.7 22.03 1.05 22.4 1.12 23.08 C1.17 23.58 1.12 24.34
+								 1.15 24.52 C1.27 25.09 2.25 26.44 2.36 27.02 C2.48 27.62 2.33 28.36 2.45 28.96 C2.57 29.56 3.17
+								 30.16 3.29 30.76 C3.34 31.02 3.15 31.57 3.13 32.04 C3.09 32.74 3.44 33.46 3.44 33.46 C3.46 33.57
+								 3.57 33.64 3.68 33.62 C3.68 33.62 5.3 32.86 5.87 32.71 C6.97 32.41 9.26 32.31 10.38 32.09 C11.88
+								 31.79 14.81 30.81 16.32 30.54 C17 30.42 18.95 30.11 19.79 29.98 Z" class="st3"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

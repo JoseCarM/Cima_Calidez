@@ -14,6 +14,7 @@ header {
     width: 100%;
     position: fixed;
     background-color: white;
+    z-index: 20;
 }
 
 #logo img {
@@ -78,39 +79,104 @@ nav ul a:hover {
         font-size: 0.8rem;
     }
 }
-/* Termina diseño de todo en Header e inicia en Main */
+/* Termina diseño de todo en Header */
+
+/* Inicia bloque de titulo */
 main {
     padding-top: 65px;
 }
 
 #titulo {
-    display: flex;
+    padding: 50px 0;
 }
 
 #textoTitulo {
-    padding: 0 10%;
+    font-size: 1.4rem;
+    padding: 0;
+    text-align: center;
+}
+
+#textoTitulo h1{
+    color: rgb(102,55,0)
+}
+
+#textoTitulo h4{
+    color: rgb(136,109,0)
+}
+
+#textoTitulo h5{
+    color: rgb(0,71,18)
 }
 
 #imagenTitulo {
     display: flex;
-    align-items: flex-end;
-    flex-flow: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-#imagenTitulo img{
-    padding-top: 20px;
-    width: 200px;
+#imgPortadaTitulo {
+    max-width: 25%;
+    clip-path: circle(41%);
+    box-sizing: border-box;
+    border: hsl(0, 0%, 80%) solid 0.75px;
+    transition: all 0.5s;
 }
+
+#imgPortadaTitulo:hover {
+    max-width: 25%;
+    clip-path: circle(100%);
+    border: hsl(0, 0%, 80%) solid 4px;
+    transition: all 0.5s;
+}
+
+#imgAveTitulo {
+    max-width: 20%;
+    padding-left: 5%;
+}
+/* Termina bloque de titulo */
+
+
+/* Inicia bloque de caracteristicas */
+#bloqueCaracteristicasGenerales {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-weight: 700;
+    color: hsl(0, 0%, 40%);
+}
+
+.caracteristica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.imgCaracteristica{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgCaracteristica img{
+    margin: 5px;
+    max-width: 60px;
+}
+
+/* Termina bloque de caracteristicas */
+
 
 /* Inicia diseño de Galeria de fotos */
 #bloqueGaleria {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
 }
 
 #pantallaCompleta {
     display: none;
+    z-index: 50;
     align-items: center;
     justify-content: center;
     flex-flow: column;
@@ -234,3 +300,87 @@ main {
     max-height: 65px;
 }
 /* Termina diseño de Galeria de fotos */
+
+
+/*Inicia seccion de contenido de servicios y todos sus elementos*/
+
+#tituloDeTabla {
+    height: 40px;
+    font-size: 1.4rem;
+}
+
+#bloqueServicios {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+#bloqueServicios table, #bloqueServicios th, #bloqueServicios td{
+    border: hsl(0, 0%, 65%) 1px solid;
+    border-collapse: collapse;
+    color: hsl(0, 0%, 65%);
+}
+
+#bloqueServicios td{
+    max-width: 420px;
+}
+
+.listasDeServicios {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listasDeServicios li {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-items: left;
+    text-align: left;
+    font-size: 0.8rem;
+    list-style-type: none;
+}
+
+#bloqueServicios table img {
+    max-width: 40px;
+    margin: 10px 20px;
+}
+/*Termina seccion de contenido de servicios y todos sus elementos*/
+
+
+/* Inicia seccion de contenido de Layout */
+#layout {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+#imgLayout {
+    width: 70%;
+}
+/* Termina sección de contenido de Layout */
+
+/* Inicia footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 10px;
+    background-color: rgb(0, 71, 18);
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+/* Termina footer */

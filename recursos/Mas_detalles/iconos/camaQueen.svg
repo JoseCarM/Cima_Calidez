@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generado por Microsoft Visio, SVG Export camaQueen.svg Página-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.614347in" height="1.12153in"
+		viewBox="0 0 44.233 80.75" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="3082" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#663700;stroke:#000000;stroke-width:0.75}
+		.st2 {fill:#efefef;stroke:#000000;stroke-width:0.75}
+		.st3 {fill:#538135;stroke:#000000;stroke-width:0.375}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Página-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Muebles móviles" v:index="0"/>
+		<v:layer v:name="Mobiliario" v:index="1"/>
+		<g id="group7-1" transform="translate(0.508357,-22.4)" v:mID="7" v:groupContext="group" v:layerMember="0;1">
+			<v:custProps>
+				<v:cp v:nameU="ShapeClass" v:lbl="Clase de forma" v:invis="true" v:langID="3082" v:val="VT4(Activo)"/>
+				<v:cp v:nameU="ShapeType" v:lbl="Tipo de forma" v:invis="true" v:langID="3082" v:val="VT4(Mobiliario)"/>
+				<v:cp v:nameU="SubShapeType" v:lbl="Tipo de subforma" v:invis="true" v:langID="3082" v:val="VT4(Cama)"/>
+				<v:cp v:nameU="ID" v:lbl="Id." v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="Name" v:lbl="Nombre" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="Department" v:lbl="Departamento" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="BelongsTo" v:lbl="Pertenece a" v:type="0" v:invis="true" v:langID="3082"/>
+				<v:cp v:nameU="Modify" v:lbl="Modificado" v:type="5" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="AssetNumber" v:lbl="Número de activo" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="SerialNumber" v:lbl="Número de serie" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="ProductDescription" v:lbl="Descripción del producto" v:type="0" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="PurchaseDate" v:lbl="Fecha de compra" v:type="5" v:invis="false" v:langID="3082"/>
+				<v:cp v:nameU="ProductNumber" v:lbl="Número de producto" v:type="0" v:langID="3082"/>
+				<v:cp v:nameU="BaseElevation" v:lbl="Elevación de la base" v:type="2" v:langID="3082"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="3D_type" v:val="VT0(1):26"/>
+				<v:ud v:nameU="3D_model_id" v:val="VT4(bed, queen)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(16):26"/>
+				<v:ud v:nameU="SolSH" v:val="VT4({5D50005D-537C-4738-9C46-130C74335A6D})"/>
+				<v:ud v:nameU="ShapeClass" v:prompt="Activo" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<title>Cama &#34;Queen&#34;</title>
+			<g id="group8-2" v:mID="8" v:groupContext="group" v:layerMember="0;1">
+				<title>Hoja.8</title>
+				<g id="shape9-3" v:mID="9" v:groupContext="shape" transform="translate(0.241643,-50.1317)">
+					<title>Hoja.9</title>
+					<path d="M0 73.28 L42.73 73.28 L42.73 74.56 L42.31 75.61 L42.31 80.75 L0.43 80.75 L0.43 75.61 L0 74.56 L0 73.28
+								 Z" class="st1"/>
+				</g>
+				<g id="shape10-5" v:mID="10" v:groupContext="shape" transform="translate(0.652102,-0.190688)">
+					<title>Hoja.10</title>
+					<path d="M41.88 79.26 L41.88 27.45 C41.88 26.63 41.22 25.96 40.4 25.96 L1.49 25.96 C0.67 25.96 0 26.63 0 27.45
+								 L0 79.26 C0 80.08 0.67 80.75 1.49 80.75 L40.4 80.75 C41.22 80.75 41.88 80.08 41.88 79.26 Z"
+							class="st2"/>
+				</g>
+				<g id="shape11-7" v:mID="11" v:groupContext="shape">
+					<title>Hoja.11</title>
+					<path d="M22.75 37.33 C22.72 37.69 22.1 37.78 21.96 38.53 C21.83 39.28 23.35 38.66 23.48 38.56 C23.62 38.45 25.35
+								 38.15 25.35 38.15 C25.35 38.15 32.81 38.02 33.37 37.91 C33.93 37.81 37.79 37.68 39.22 37.99 C39.93
+								 38.15 40.88 38.69 42 38.8 C43.12 38.9 41.87 37.55 41.87 37.55 C41.85 36.74 41.52 36.76 41.49 36.42
+								 C41.47 36.26 41.45 35.97 41.37 35.89 C41.29 35.81 41.19 35.32 41.19 35.32 C41.27 34.79 40.97 31.38
+								 40.97 31.38 C40.97 31.38 40.8 30.46 40.92 30.09 C41.04 29.73 41.44 27.4 41.44 27.4 C41.44 26.96
+								 41.32 26.71 41.08 26.72 C40.84 26.73 40.01 27.15 40.01 27.15 C39.32 27.16 38.94 27.59 38.94 27.59
+								 C38.37 27.46 35.6 27.78 35.6 27.78 L32.48 27.8 C32.48 27.8 28.52 27.72 28.35 27.62 C28.17 27.51
+								 26.95 27.67 26.44 27.46 C25.93 27.24 24.93 27.36 24.7 27.28 C24.48 27.2 23.64 27.08 23.64 27.08
+								 C22.91 26.38 22.75 26.71 22.75 26.71 C22.42 27.25 23.26 28.41 23.26 28.41 C23.7 28.73 23.47 28.94
+								 23.47 28.94 C23.19 29.33 23.27 30.63 23.39 31.18 C23.44 31.39 23.63 31.9 23.53 32.02 C23.42 32.14
+								 23.38 32.81 23.38 32.81 C23.38 32.81 23.39 33.16 23.39 33.58 C23.39 34.01 23.73 34.34 23.64 34.58
+								 C23.46 35.06 22.84 35.88 22.75 37.33 ZM2.01 37.33 C1.99 37.69 1.36 37.78 1.23 38.53 C1.09 39.28
+								 2.62 38.66 2.75 38.56 C2.88 38.45 4.62 38.15 4.62 38.15 C4.62 38.15 12.07 38.02 12.63 37.91 C13.2
+								 37.81 17.06 37.68 18.49 37.99 C19.19 38.15 20.14 38.69 21.27 38.8 C22.39 38.9 21.13 37.55 21.13
+								 37.55 C21.12 36.74 20.78 36.76 20.75 36.42 C20.74 36.26 20.72 35.97 20.64 35.89 C20.56 35.81 20.45
+								 35.32 20.45 35.32 C20.53 34.79 20.24 31.38 20.24 31.38 C20.24 31.38 20.06 30.46 20.18 30.09 C20.3
+								 29.73 20.71 27.4 20.71 27.4 C20.71 26.96 20.59 26.71 20.34 26.72 C20.1 26.73 19.28 27.15 19.28 27.15
+								 C18.58 27.16 18.21 27.59 18.21 27.59 C17.63 27.46 14.87 27.78 14.87 27.78 L11.74 27.8 C11.74 27.8
+								 7.79 27.72 7.61 27.62 C7.44 27.51 6.21 27.67 5.7 27.46 C5.19 27.24 4.19 27.36 3.97 27.28 C3.74 27.2
+								 2.9 27.08 2.9 27.08 C2.17 26.38 2.01 26.71 2.01 26.71 C1.69 27.25 2.52 28.41 2.52 28.41 C2.96 28.73
+								 2.74 28.94 2.74 28.94 C2.46 29.33 2.54 30.63 2.66 31.18 C2.7 31.39 2.9 31.9 2.79 32.02 C2.68 32.14
+								 2.64 32.81 2.64 32.81 C2.64 32.81 2.65 33.16 2.65 33.58 C2.65 34.01 2.99 34.34 2.9 34.58 C2.72 35.06
+								 2.11 35.88 2.01 37.33 ZM43.19 54.84 L43.19 53.9 C43.19 53.87 43.13 50.38 43.13 50.34 C43.14 50.06
+								 43.19 46.88 43.19 46.8 L43.19 46.08 C43.19 45.96 43.09 45.87 42.97 45.87 L37.8 45.87 C37.76 45.87
+								 32.52 45.81 31.46 45.87 C31.4 45.87 24.59 45.82 23.62 45.82 C23.58 45.82 15.04 45.8 13.79 45.87
+								 L0.24 45.87 C0.12 45.87 0.03 45.96 0.03 46.08 L0.03 46.59 C0.03 46.66 0.01 47.23 0 47.45 C-0 47.49
+								 0.18 51.97 0.03 54.16 L0.03 54.84 C0.03 54.96 0.12 55.05 0.24 55.05 L1.63 55.05 C2.09 54.95 2.91
+								 55.05 2.94 55.05 L3.89 55.05 C4.85 54.95 7.39 55.05 7.44 55.05 L9.51 55.05 C10.79 55.16 13.21 55.05
+								 13.25 55.05 C15.68 55.16 19.68 55.04 19.72 55.04 C20.6 55.03 22.46 55.01 22.5 55.01 C23.02 54.99
+								 24.13 54.97 24.17 54.97 C24.86 54.95 26.17 54.96 26.21 54.96 C26.48 54.96 27.1 54.97 27.12 54.97
+								 C27.41 54.95 28.06 54.98 28.1 54.98 C28.98 54.98 30.83 54.98 30.88 54.98 C32.72 54.95 34.63 54.95
+								 36.53 55.04 C36.57 55.04 37.63 55.05 37.72 55.05 L42.97 55.05 C43.09 55.05 43.19 54.96 43.19 54.84
+								 ZM42.48 55.05 L37.66 55.05 C37.58 55.05 36.52 55.04 36.47 55.04 C34.57 54.95 32.66 54.95 30.82 54.98
+								 C30.78 54.98 28.93 54.98 28.05 54.98 C28.01 54.98 27.35 54.95 27.07 54.97 C27.04 54.97 26.43 54.96
+								 26.15 54.96 C26.11 54.96 24.81 54.95 24.12 54.97 C24.08 54.97 22.96 54.99 22.45 55.01 C22.41 55.01
+								 20.55 55.03 19.66 55.04 C19.62 55.04 15.62 55.16 13.19 55.05 C13.15 55.05 10.74 55.16 9.45 55.05
+								 L7.38 55.05 C7.33 55.05 4.79 54.95 3.83 55.05 L2.88 55.05 C2.86 55.05 2.03 54.95 1.57 55.05 L0.6
+								 55.05 L0.6 79.07 C0.6 79.89 -0.52 80.75 0.3 80.75 L3.57 80.56 L42.48 80.49 C43.3 80.49 43.43 80.09
+								 42.48 78.55 L42.48 55.05 Z" class="st3"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
