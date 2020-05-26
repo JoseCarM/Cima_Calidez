@@ -173,7 +173,7 @@ botonPantallaCompletaIzq.onclick = () => {
 
 botonPantallaCompletaDer.onclick = () => {
     desvanecido(imagenPantallaCompleta, () => {
-        incrementaIndice();
+        disminuyeIndice();
         renderGaleria(indice);
     }, 250);
 }
