@@ -29,20 +29,20 @@ switch (tabActivo){
         preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break;
     case 'occidentalis':
-        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.occidentalis.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.occidentalis.imagenes);
         break;
     case 'melanocephalus':
-        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.melanocephalus.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.melanocephalus.imagenes);
         break;    
     case 'leucotis':
-        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.leucotis.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.leucotis.imagenes);
         break
     case 'mexicanus':
-        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.mexicanus.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.mexicanus.imagenes);
         break;        
 }
 //Fin de extraccion de los src de galerias e introduccion en galeriaActivaSrc en formato de array segun al tabActivo
