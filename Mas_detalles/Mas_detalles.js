@@ -79,21 +79,28 @@ const renderGaleria = (inicio) => {
             indiceDeLoop = galeriaActivaSrc[1].length;
         }
         //RESTRICCION 3: Otorgar un array con los src de cada imagen
-        minisGaleriaIds[i], minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src
+        minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src
+        minisGaleriaIds[i].onload = () => console.log(`${inicio}:${i} carga completada`);
         indiceDeLoop++; 
     }
     imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
+    imagenPantallaCompleta.onload = () => console.log(`${inicio} grande carga completada`);
 }
-for(let i = 0; i < galeriaActivaSrc[1].length; i++){
-    setInterval(renderGaleria(i), 20);
-}
+// for(let i = 0; i < galeriaActivaSrc[1].length; i++){
+//     setTimeout(() => {
+//         renderGaleria(i)
+//         galeriaActivaSrc[1][i].onload = () => console.log('Ya acabe');
+//         galeriaActivaSrc[0][i].onload = () => console.log('Ya acabe');
+//     }, 50);
+// }
+
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
 
 
 //Inicio de eventos para botones de galeria
 let indice = 0;
-let play = true;
+let play = false;
 let botonesDeGaleria = ['botonGaleriaIzq', 'botonGaleriaDer', 'botonGaleriaPausaPlay'].map(Id => document.getElementById(Id));
     //Función logica para incrementar el indice global por 1 sin salir del rango 0-galeriaActivaSrc
 const incrementaIndice = () => {
@@ -145,6 +152,14 @@ setInterval(() => {
 }, 5000);
 //Fin de eventos para botones de galeria 
 
+
+let mamada = 0
+setInterval(() => {
+    if (mamada < galeriaActivaSrc[1].length){
+        incrementaIndice();
+        mamada++;
+    }
+}, 10)
 
 
 //Inicia eventos para pantalla completa
