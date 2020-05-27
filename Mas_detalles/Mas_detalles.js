@@ -159,7 +159,7 @@ setInterval(() => {
 minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     //El boton pausa cambia a play y se detiene la secuencia del carrete
     botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
-    play = true;
+    play = false;
     //Se identifica el indice de la imagen seleccionada y se le da un valor con el que se actualiza el inidce global
     let IndiceDeMiniatura = minisGaleriaIds.indexOf(document.getElementById(event.target.id));
     console.log(indice, IndiceDeMiniatura, galeriaActivaSrc[1].length)
