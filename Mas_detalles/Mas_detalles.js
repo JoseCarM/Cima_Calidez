@@ -26,23 +26,23 @@ const  preloadGaleria = (galeria, objetoSrc) => {
 switch (tabActivo){
     case 'ultramarina':
         preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.miniaturas);
         break;
     case 'occidentalis':
         preloadGaleria(galeriaActivaSrc[0], galeriaSrc.occidentalis.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.occidentalis.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.occidentalis.miniaturas);
         break;
     case 'melanocephalus':
         preloadGaleria(galeriaActivaSrc[0], galeriaSrc.melanocephalus.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.melanocephalus.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.melanocephalus.miniaturas);
         break;    
     case 'leucotis':
         preloadGaleria(galeriaActivaSrc[0], galeriaSrc.leucotis.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.leucotis.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.leucotis.miniaturas);
         break
     case 'mexicanus':
         preloadGaleria(galeriaActivaSrc[0], galeriaSrc.mexicanus.imagenes);
-        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.mexicanus.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.mexicanus.miniaturas);
         break;        
 }
 //Fin de extraccion de los src de galerias e introduccion en galeriaActivaSrc en formato de array segun al tabActivo
