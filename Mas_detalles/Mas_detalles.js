@@ -12,27 +12,37 @@ let botonPantallaCompletaDer = document.getElementById('botonPantallaCompletaDer
 
 //Inicio de extraccion de los src de galerias e introduccion en galeriaActivaSrc en formato de array segun al tabActivo
 let tabActivo = document.getElementById('tabActivo').innerHTML.toLocaleLowerCase(); 
-let galeriaActivaSrc = ['',''];
+let galeriaActivaSrc = [[],[]];
+//Función para preecargar las imagenes que se utilizaran
+const  preloadGaleria = (galeria, objetoSrc) => {
+    let i = 0;
+    for (const propiedad in objetoSrc) {
+        // Primero hay que crear el objeto vacio antes de agregar propiedades.
+        galeria[i] = {};
+        galeria[i].src = objetoSrc[propiedad];
+        i++;
+    }
+}
 switch (tabActivo){
     case 'ultramarina':
-        galeriaActivaSrc[0] = (Object.values(galeriaSrc.ultramarina.imagenes));
-        galeriaActivaSrc[1] = (Object.values(galeriaSrc.ultramarina.miniaturas));
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break;
     case 'occidentalis':
-        galeriaActivaSrc[0] = (Object.values(galeriaSrc.occidentalis.imagenes));
-        galeriaActivaSrc[1] = (Object.values(galeriaSrc.occidentalis.miniaturas));
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break;
     case 'melanocephalus':
-        galeriaActivaSrc[0] = (Object.values(galeriaSrc.melanocephalus.imagenes));
-        galeriaActivaSrc[1] = (Object.values(galeriaSrc.melanocephalus.miniaturas));
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break;    
     case 'leucotis':
-        galeriaActivaSrc[0] = (Object.values(galeriaSrc.leucotis.imagenes));
-        galeriaActivaSrc[1] = (Object.values(galeriaSrc.leucotis.miniaturas));
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break
     case 'mexicanus':
-        galeriaActivaSrc[0] = (Object.values(galeriaSrc.mexicanus.imagenes));
-        galeriaActivaSrc[1] = (Object.values(galeriaSrc.mexicanus.miniaturas));
+        preloadGaleria(galeriaActivaSrc[0], galeriaSrc.ultramarina.imagenes);
+        preloadGaleria(galeriaActivaSrc[1], galeriaSrc.ultramarina.imagenes);
         break;        
 }
 //Fin de extraccion de los src de galerias e introduccion en galeriaActivaSrc en formato de array segun al tabActivo
@@ -69,10 +79,10 @@ const renderGaleria = (inicio) => {
             indiceDeLoop = galeriaActivaSrc[1].length;
         }
         //RESTRICCION 3: Otorgar un array con los src de cada imagen
-        minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop];
+        minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
         indiceDeLoop++; 
     }
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio];
+    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
 }
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
