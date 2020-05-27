@@ -8,6 +8,9 @@ html {
 body {
     width: 100%;
     margin: 0;
+    background-image: url(../recursos/Mas_detalles/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 /* Inicia diseño de todo en Header */
 header {
@@ -17,8 +20,12 @@ header {
     z-index: 20;
 }
 
-#logo img {
-    max-width: 100%;
+#tabMovil {
+    display: none;
+}
+
+#tabMovil img {
+    display: none;
 }
 
 nav ul{
@@ -45,6 +52,7 @@ nav ul a {
 
 nav ul a:hover {
     color: rgb(0, 71, 18);
+    background-color: rgba(268, 246, 175, 0.5);
     transition: all 0.5s;
 }
 
@@ -71,7 +79,7 @@ nav ul a:hover {
 }
 
 #tabActivo {
-    border-bottom: none;
+    background-color: rgba(268, 246, 175, 0.5)
 }
 
 @media screen and (max-width: 750px){
@@ -94,6 +102,8 @@ main {
     font-size: 1.4rem;
     padding: 0;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
 }
 
 #textoTitulo h1{
@@ -135,36 +145,6 @@ main {
 }
 /* Termina bloque de titulo */
 
-
-/* Inicia bloque de caracteristicas */
-#bloqueCaracteristicasGenerales {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    font-weight: 700;
-    color: hsl(0, 0%, 40%);
-    text-align: center;
-}
-
-.caracteristica {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;;
-}
-
-.imgCaracteristica{
-    display: flex;
-    justify-content: space-around;
-}
-
-.imgCaracteristica img{
-    margin: 5px;
-    max-width: 60px;
-}
-
-/* Termina bloque de caracteristicas */
 
 
 /* Inicia diseño de Galeria de fotos */
@@ -220,6 +200,8 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-end;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
 }
 
 #galeria img{
@@ -303,6 +285,41 @@ main {
 /* Termina diseño de Galeria de fotos */
 
 
+
+/* Inicia bloque de caracteristicas */
+#bloqueCaracteristicasGenerales {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-weight: 700;
+    color: hsl(0, 0%, 40%);
+    text-align: center;
+}
+
+.caracteristica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.imgCaracteristica{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgCaracteristica img{
+    margin: 5px;
+    max-width: 60px;
+}
+
+/* Termina bloque de caracteristicas */
+
+
+
 /*Inicia seccion de contenido de servicios y todos sus elementos*/
 
 #tituloDeTabla {
@@ -325,6 +342,7 @@ main {
     border: hsl(0, 0%, 65%) 1px solid;
     border-collapse: collapse;
     color: hsl(0, 0%, 65%);
+    background-color: white;
 }
 
 #bloqueServicios td{
@@ -385,3 +403,149 @@ footer a {
     color: white;
 }
 /* Termina footer */
+
+
+/* Inicia Media Query para dispositivos moviles */
+@media screen and (max-width: 560px) {
+    /* Inicio Header */
+    header {
+        height: 52px;
+        bottom: 0px;
+        transition: all 1s;
+        touch-action: pan-y;
+    }
+
+    #tabMovil {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        font-size: 2rem;
+        font-weight: 600;
+        color: hsl(0, 0%, 40%);
+        justify-content: center;
+        align-items: center;
+        border-top: hsl(0, 0%, 54%) 3px solid;
+        border-bottom: 0;
+    }
+
+
+    #tabActivo {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        padding: 0;
+        font-size: 2rem;
+        text-align: center;
+        border-top: hsl(0, 0%, 54%) 3px solid;
+    }
+
+    #logo {
+        display: flex;
+        max-width: 100%;
+        padding: 0;
+        font-size: 2rem;
+    }
+
+    #logo img{
+        display: none;
+    }
+
+    nav ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul a {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        font-size: 2rem;
+        text-align: center;
+        border-top: hsl(0, 0%, 54%) 3px solid;
+        border-bottom: 0;
+    }
+    /* Fin Header */
+
+    main {
+        padding-top: 0;
+    }
+
+    /* Inicio titulo */
+
+    #titulo {
+        padding: 0;
+    }
+
+    #imagenTitulo {
+        flex-flow: column;
+    }
+
+    #imgPortadaTitulo {
+        max-width: 60%;
+    }
+
+    #imgPortadaTitulo:hover {
+        max-width: 100%;
+    }
+
+    #textoTitulo h4 {
+        padding: 0px 10px;
+    }
+
+    #imgAveTitulo {
+        max-width: 40%;
+        padding-left: 0;
+    }
+
+    
+    /* Fin titulo */
+
+
+    /* Inicia Galeria */
+
+    #galPrimaria {
+        width: auto;
+        max-width: 470px;
+    }
+
+    #galeria img {
+        padding: 0;
+    }
+
+    /* Fin Galeria */
+
+
+    /* Inicia Pantalla Completa */
+    .botonesPantallaCompleta:active {
+        max-height: 40px;
+    }
+    /* Fin Pantalla Completa */
+
+
+    /* Inicia Servicios */
+    #contenidoDeServicios td{
+        width: 49%;
+    }
+
+    .listasDeServicios {
+        align-content: flex-start;
+    }
+
+    .listasDeServicios li {
+        width: 100%;
+    }
+    /* Fin Servicios */
+
+    /* Inicia Layout */
+    #imgLayout {
+        width: 95%;
+    }
+    /* Fin Layout */
+
+    /* Inicia Footer */
+    footer {
+        margin-bottom: 50px;
+        font-size: 0.7rem;
+    }
+}

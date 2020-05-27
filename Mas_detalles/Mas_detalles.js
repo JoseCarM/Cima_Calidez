@@ -43,8 +43,8 @@ switch (tabActivo){
 const desvanecido = (elemento, cambio, tiempoDeTransicion) => {
     elemento.style.transition = `all ${tiempoDeTransicion}ms`;
     setTimeout(() => { elemento.style.opacity = 0 }, 20);
-    setTimeout(cambio, tiempoDeTransicion);   //>>>>>>>> Pendiente de justificar los 100ms adicionals !!!!!!! <<<<<<<<
-    setTimeout(() => { elemento.style.opacity = 1 }, tiempoDeTransicion + 100);
+    setTimeout(cambio, tiempoDeTransicion);
+    elemento.onload = () => {setTimeout(() => { elemento.style.opacity = 1 }, tiempoDeTransicion)}
 }
 //Fin de logica para transiciones
 
@@ -178,3 +178,15 @@ botonPantallaCompletaDer.onclick = () => {
     }, 250);
 }
 //Fin eventos para pantalla completa
+
+
+// Inicio de eventos Header
+let tabMovil = document.getElementById('tabMovil');
+let header = document.querySelector('header');
+let menuMovilDesplegado = false;
+tabMovil.onclick = () => {
+    menuMovilDesplegado ? tabMovil.innerHTML = 'Desplegar menú' : tabMovil.innerHTML = 'Cerrar menu';
+    menuMovilDesplegado ? header.style.height = '' : header.style.height = '400px';
+    menuMovilDesplegado ? menuMovilDesplegado = false : menuMovilDesplegado = true;
+}
+// Fin de eventos Header

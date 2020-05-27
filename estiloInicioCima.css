@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-image: url('./recursos/inicio/imagenDeFondoHeader.png');
+    background-image: url('./recursos/inicio/imagenDeFondoHeader.jpg');
     background-size: cover;
     background-position: bottom;
 }
@@ -100,15 +100,21 @@ nav {
     width: 100%;
     position: relative;
     top: -2px;
-    padding: 30px 0;
+    padding-bottom: 10px;
+    background-image: url(./recursos/inicio/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /*Seccion de contenido de Alojamiento y todos sus elementos*/
 #contenidoDeAlojamientos {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+    background-image: url(./recursos/inicio/desvanecidoBlanco.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #mensajeDeBienvenida {
@@ -124,10 +130,11 @@ nav {
 .miniaturaCabanas {
     display: block;
     max-width: 406px;
-    background-color: rgb(207,215,191);
-    border: hsl(0, 0%, 80%) solid 3px;
+    background-color: rgb(241, 220, 175);
+    border: rgba(0, 71, 18, 0.45) solid 3px;
+    border-radius: 10px;
     padding: 0;
-    margin: 8px 1px;
+    margin: 10px;
     justify-content: center;
 }
 
@@ -144,7 +151,7 @@ nav {
     align-content: center;
     flex-flow: column;
     margin: 0;
-    padding: 0 0 4px 0;;
+    padding: 0 0 4px 0;
     background-color: rgb(245,239,227);
     text-align: center;
 }
@@ -159,7 +166,7 @@ nav {
 }
 
 img.cabezaDePajaro {
-    width: 15%;
+    max-width: 15%;
     height: auto;
     padding: 0;
     border: 0;
@@ -192,7 +199,9 @@ img.cabezaDePajaroEspejo {
     align-items: center;
     justify-content: space-between;
     padding: 1%;
-    background-color: rgb(245,239,227)
+    background-color: rgb(245,239,227);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .botonesMiniaturasCabanas {
@@ -227,6 +236,7 @@ img.cabezaDePajaroEspejo {
     background-color:  hsl(0, 0%, 100%, 0);
     color: hsl(0, 0%, 35%);
     font-size: 1rem;
+    text-align: center;
     font-weight: 600;
     pointer-events: none;
     user-select: none;
@@ -234,15 +244,16 @@ img.cabezaDePajaroEspejo {
 
 .botonesMiniaturasCabanas img {
     display: inline-block;
-    width: 45px;
-    padding: 0;
+    max-width: 25%;
+    padding-right: 4px;
     margin: 0;
     border: 0;
     opacity: 65%;
     background-color:  hsl(0, 0%, 100%, 0);
     pointer-events: none;
     user-select: none;
-} 
+}
+/*Termina de contenido de Alojamiento y todos sus elementos*/ 
 
 /*Seccion de contenido de servicios y todos sus elementos*/
 #contenidoDeServicios {
@@ -254,6 +265,9 @@ img.cabezaDePajaroEspejo {
     font-size: 1.2rem;
     text-align: center;
     color: rgb(116, 72, 34);
+    background-image: url(./recursos/inicio/desvanecidoBlanco.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #textoServicios {
@@ -265,6 +279,7 @@ img.cabezaDePajaroEspejo {
     border: hsl(0, 0%, 65%) 1px solid;
     border-collapse: collapse;
     color: hsl(0, 0%, 65%);
+    background-color: white;
 }
 
 #contenidoDeServicios td{
@@ -294,7 +309,16 @@ img.cabezaDePajaroEspejo {
     max-width: 40px;
     margin: 10px 20px;
 }
-/*Contenido de Ubicacion*/
+/*Termina de contenido de servicios y todos sus elementos*/
+
+
+/*Inicia contenido de Ubicacion*/
+#contenidoDeUbicacion {
+    background-image: url(./recursos/inicio/desvanecidoBlanco.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 #contenidoDeUbicacion iframe {
     width: 92%;
     height: 600px;
@@ -304,8 +328,8 @@ img.cabezaDePajaroEspejo {
     background-color: rgb(207,215,191);
 }
 
-#textoDeUbicacion {
-    padding: 0 3%;
+#textoDeUbicacion h3, h5, h4 {
+    padding: 2%;
     border: 0;
     margin: 0;
     font-weight: 600;
@@ -313,6 +337,17 @@ img.cabezaDePajaroEspejo {
     text-align: center;
     color: rgb(116, 72, 34);
 }
+/*Termina contenido de Ubicacion*/
+
+
+/* Inicia contenido de Conócenos */
+#contenidoDeConocenos {
+    background-image: url(./recursos/inicio/desvanecidoBlanco.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* Termina contenido de Conócenos */
+
 
 /* Inicia footer */
 footer {
