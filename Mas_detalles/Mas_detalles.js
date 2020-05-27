@@ -82,7 +82,7 @@ const renderGaleria = (inicio) => {
         minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
         indiceDeLoop++; 
     }
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][indice].src;
+    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
 }
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
