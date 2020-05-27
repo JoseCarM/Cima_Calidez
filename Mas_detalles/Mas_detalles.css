@@ -282,6 +282,10 @@ main {
     max-width: 19%;
     max-height: 65px;
 }
+
+.galeriaNoVisible {
+    display: none;
+}
 /* Termina diseño de Galeria de fotos */
 
 

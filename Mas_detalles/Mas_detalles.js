@@ -61,7 +61,7 @@ const desvanecido = (elemento, cambio, tiempoDeTransicion) => {
 
 //Inicio de render de galeria (REUTILIZABLE CON RESTRICCIONES)
     //RESTRICCION 1: El valor de esta variable esta determinado por la estructura HTML donde se implementa
-let numDeMiniaturas = 8; 
+let numDeMiniaturas = 14; //8 visibles + 6 invisibles
 let minisGaleriaIds = [];
 for (let i = 1; i < numDeMiniaturas + 1; i++){
     //Se contruye el array con los IDs de los elementos <img>, 
@@ -82,7 +82,7 @@ const renderGaleria = (inicio) => {
         minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
         indiceDeLoop++; 
     }
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
+    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio + 3].src;
 }
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
