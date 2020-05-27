@@ -446,6 +446,11 @@ footer a {
         font-size: 2rem;
     }
 
+    #logo:hover {
+        font-size: 2rem;
+        padding: 0;
+    }
+
     #logo img{
         display: none;
     }
