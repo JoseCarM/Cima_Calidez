@@ -161,7 +161,7 @@ minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     //Se actualiza la galeria
     renderGaleria(indice);
     //Se otorga el valor src correspondiente a la imagen de pantalla completa
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
+    imagenPantallaCompleta.src = galeriaActivaSrc[0][indice].src;
     //Se hace visible la pantalla completa
     pantallaCompleta.style.display = 'flex';
     //Sin el setTimeout no se veria la transición
