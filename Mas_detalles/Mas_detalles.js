@@ -94,17 +94,15 @@ for (let i = 1; i <= longitudDeGaleria; i++){
 const renderGaleria = (inicio) => { 
     let indiceDeLoop = inicio; 
     //El indice del loop se encarga de generar una secuencia que solo existe entre 0 y el largo de galeriaActivaSrc
-    for(let i = 0; i < longitudDeGaleria; i++){             
+    for(let i = 0; i < numDeMiniaturasVisibles; i++){             
         if(indiceDeLoop >= longitudDeGaleria){
             indiceDeLoop = 0;
         } else if (indiceDeLoop < 0){
             indiceDeLoop = longitudDeGaleria;
         }
-        //RESTRICCION 3: Otorgar un array con los src de cada imagen
             minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
             indiceDeLoop++;   
     }
-    imagenPantallaCompleta1.src = galeriaActivaSrc[0][inicio].src;
 }
 
 
@@ -172,16 +170,17 @@ minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     //El boton pausa cambia a play y se detiene la secuencia del carrete
     botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
     play = false;
-    //Se identifica el indice de la imagen seleccionada y se le da un valor con el que se actualiza el inidce global
+    //Se identifica el indice de la imagen seleccionada y se le da un valor con el que se actualiza el indice global
     let IndiceDeMiniatura = minisGaleriaIds.indexOf(document.getElementById(event.target.id));
     //El indice no debe ser mayor o igual al valor del largo de la galeriaActivaSrc
-    if (indice + IndiceDeMiniatura >= galeriaActivaSrc[1].length){
-        indice = indice + IndiceDeMiniatura - galeriaActivaSrc[1].length;
+    if (indice + IndiceDeMiniatura >= longitudDeGaleria){
+        indice = indice + IndiceDeMiniatura - longitudDeGaleria;
     } else {
         indice += IndiceDeMiniatura;
     }
     //Se actualiza la galeria
     renderGaleria(indice);
+    imagenPantallaCompleta1.src = galeriaActivaSrc[0][indice].src;
     //Se hace visible la pantalla completa
     pantallaCompleta.style.display = 'flex';
     //Sin el setTimeout no se veria la transición
@@ -198,6 +197,7 @@ botonPantallaCompletaCerrar.onclick = () => {
 botonPantallaCompletaIzq.onclick = () => {
     desvanecido(imagenPantallaCompleta1, () => {
         incrementaIndice();
+        imagenPantallaCompleta1.src = galeriaActivaSrc[0][indice].src;
         renderGaleria(indice);
     }, 250);
 }
@@ -205,6 +205,7 @@ botonPantallaCompletaIzq.onclick = () => {
 botonPantallaCompletaDer.onclick = () => {
     desvanecido(imagenPantallaCompleta1, () => {
         disminuyeIndice();
+        imagenPantallaCompleta1.src = galeriaActivaSrc[0][indice].src;
         renderGaleria(indice);
     }, 250);
 }
