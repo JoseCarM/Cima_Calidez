@@ -79,10 +79,13 @@ const renderGaleria = (inicio) => {
             indiceDeLoop = galeriaActivaSrc[1].length;
         }
         //RESTRICCION 3: Otorgar un array con los src de cada imagen
-        minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
+        minisGaleriaIds[i], minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src
         indiceDeLoop++; 
     }
     imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
+}
+for(let i = 0; i < galeriaActivaSrc[1].length; i++){
+    setInterval(renderGaleria(i), 20);
 }
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
