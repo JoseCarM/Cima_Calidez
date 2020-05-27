@@ -2,14 +2,13 @@ import { galeriaSrc } from './GaleriasSrc.js';
 
 //Obtencion de los elementos a manipular
 let pantallaCompleta = document.getElementById('pantallaCompleta');
-let imagenPantallaCompletaNoVisible = document.getElementById('imagenPantallaCompletaNoVisible');
-let imagenPantallaCompleta = document.getElementById('imagenPantallaCompleta');
+let imagenPantallaCompleta1 = document.getElementById('imagenPantallaCompleta1');
+let galeriaMiniNoVisible = document.getElementById('galeriaMiniNoVisible');
 let botonPantallaCompletaCerrar = document.getElementById('botonPantallaCompletaCerrar');
 let botonPantallaCompletaIzq = document.getElementById('botonPantallaCompletaIzq');
 let botonPantallaCompletaDer = document.getElementById('botonPantallaCompletaDer');
 
-
-    
+console.time("Body");
 
 //Inicio de extraccion de los src de galerias e introduccion en galeriaActivaSrc en formato de array segun al tabActivo
 let tabActivo = document.getElementById('tabActivo').innerHTML.toLocaleLowerCase(); 
@@ -61,35 +60,58 @@ const desvanecido = (elemento, cambio, tiempoDeTransicion) => {
 
 
 //Inicio de render de galeria (REUTILIZABLE CON RESTRICCIONES)
-    //RESTRICCION 1: El valor de esta variable esta determinado por la estructura HTML donde se implementa
-let numDeMiniaturas = 9; //8 visisbles + 1 no visible
+let numDeMiniaturasVisibles = 8;
+let longitudDeGaleria = galeriaActivaSrc[1].length;
 let minisGaleriaIds = [];
-for (let i = 1; i < numDeMiniaturas + 1; i++){
+let galeriaPantallaCompletaIds = [];
+
+for (let i = 1; i <= longitudDeGaleria; i++){
     //Se contruye el array con los IDs de los elementos <img>, 
-    // RESTRICCION 2: esta estructura está ligada a la esctructura HTML donde se implementa, se debe modificar el string del ID y ser numerado iniciando con 1
-    minisGaleriaIds.push(document.getElementById(`miniGaleria${i}`))
+    if (i <= 8) {
+        //Se generan los primero id de los elementos existentes
+        minisGaleriaIds.push(document.getElementById(`miniGaleria${i}`))
+    } else if ( i > 8 ) {
+        // Se generan lo nuevos elementos invisibles de la galeria mini
+        let nuevoImgTag = document.createElement("img");
+        nuevoImgTag.setAttribute('id', `miniGaleria${i}`);
+        galeriaMiniNoVisible.appendChild(nuevoImgTag);
+        minisGaleriaIds.push(nuevoImgTag);
+    }
+    if (i > 1){
+        // Se generan los nuevos elementos invisibles de la pantalla completa
+        let nuevoImgTag = document.createElement("img");
+        nuevoImgTag.setAttribute('id', `imagenPantallaCompleta${i}`);
+        nuevoImgTag.setAttribute('class', 'galeriaNoVisible');
+        pantallaCompleta.appendChild(nuevoImgTag);
+        galeriaPantallaCompletaIds.push(nuevoImgTag);
+    }
 };
-    //Se añaden los src correspondientes a los tags <img> basados en el indice
+
+
+
+
+//Cambio de ids entre img tags
 const renderGaleria = (inicio) => { 
     let indiceDeLoop = inicio; 
     //El indice del loop se encarga de generar una secuencia que solo existe entre 0 y el largo de galeriaActivaSrc
-    for(let i = 0; i < numDeMiniaturas; i++){             
-        if(indiceDeLoop >= galeriaActivaSrc[1].length){
+    for(let i = 0; i < longitudDeGaleria; i++){             
+        if(indiceDeLoop >= longitudDeGaleria){
             indiceDeLoop = 0;
         } else if (indiceDeLoop < 0){
-            indiceDeLoop = galeriaActivaSrc[1].length;
+            indiceDeLoop = longitudDeGaleria;
         }
         //RESTRICCION 3: Otorgar un array con los src de cada imagen
-        minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src
-        indiceDeLoop++; 
+            minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
+            indiceDeLoop++;   
     }
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][inicio].src;
+    imagenPantallaCompleta1.src = galeriaActivaSrc[0][inicio].src;
 }
 
 
 
 //Inicio de eventos para botones de galeria
 let indice = 0;
+renderGaleria(indice);
 let play = true;
 let botonesDeGaleria = ['botonGaleriaIzq', 'botonGaleriaDer', 'botonGaleriaPausaPlay'].map(Id => document.getElementById(Id));
     //Función logica para incrementar el indice global por 1 sin salir del rango 0-galeriaActivaSrc
@@ -122,13 +144,13 @@ const playPausa = () => {
         play = true;
     }
 }
-    //Boton para visualizar a la izquierda
-botonesDeGaleria[0].onclick = () => {   
-    incrementaIndice();
-}
     //Boton para visualizar a la derecha
-botonesDeGaleria[1].onclick = () => {   
+botonesDeGaleria[0].onclick = () => {   
     disminuyeIndice();
+}
+    //Boton para visualizar a la izquierda
+botonesDeGaleria[1].onclick = () => {   
+    incrementaIndice();
 }   
     //Boton play-pausa
 botonesDeGaleria[2].onclick = () => {   
@@ -137,21 +159,11 @@ botonesDeGaleria[2].onclick = () => {
     //Funcion para animar carrete
 setInterval(() => {  
     if (play){
-        incrementaIndice(); 
+    incrementaIndice(); 
     }
 }, 5000);
 //Fin de eventos para botones de galeria 
 
-//Una sola iteración sobre todas la imagenes para que el naveragdor las coloque en el cache
-let carga = 0
-setInterval(() => {
-    minisGaleriaIds[minisGaleriaIds.length - 1].src = galeriaActivaSrc[1][carga].src;
-    minisGaleriaIds[minisGaleriaIds.length - 1].onload = () => console.log(`${carga} carga completada`);
-    imagenPantallaCompletaNoVisible.src = galeriaActivaSrc[0][carga].src;
-    imagenPantallaCompletaNoVisible.onload = () => console.log(`${carga} grande carga completada`);
-    (carga < galeriaActivaSrc[1].length - 1) ? carga++ : carga = 0;
-    console.log(carga);
-}, 1000);
 
 
 //Inicia eventos para pantalla completa
@@ -162,7 +174,6 @@ minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     play = false;
     //Se identifica el indice de la imagen seleccionada y se le da un valor con el que se actualiza el inidce global
     let IndiceDeMiniatura = minisGaleriaIds.indexOf(document.getElementById(event.target.id));
-    console.log(indice, IndiceDeMiniatura, galeriaActivaSrc[1].length)
     //El indice no debe ser mayor o igual al valor del largo de la galeriaActivaSrc
     if (indice + IndiceDeMiniatura >= galeriaActivaSrc[1].length){
         indice = indice + IndiceDeMiniatura - galeriaActivaSrc[1].length;
@@ -185,14 +196,14 @@ botonPantallaCompletaCerrar.onclick = () => {
 }
 
 botonPantallaCompletaIzq.onclick = () => {
-    desvanecido(imagenPantallaCompleta, () => {
+    desvanecido(imagenPantallaCompleta1, () => {
         incrementaIndice();
         renderGaleria(indice);
     }, 250);
 }
 
 botonPantallaCompletaDer.onclick = () => {
-    desvanecido(imagenPantallaCompleta, () => {
+    desvanecido(imagenPantallaCompleta1, () => {
         disminuyeIndice();
         renderGaleria(indice);
     }, 250);
@@ -210,3 +221,26 @@ tabMovil.onclick = () => {
     menuMovilDesplegado ? menuMovilDesplegado = false : menuMovilDesplegado = true;
 }
 // Fin de eventos Header
+
+
+
+//Una vez que termina de cargar el elemento body se inicia la carga de todas la imagenes no visibles
+document.querySelector('body').onload = () => {
+    console.timeLog("Body");
+    console.time("imgMiniInv"); //Se agregan timers para control
+    console.time("imgFullInv");
+    for(let i = numDeMiniaturasVisibles; i < longitudDeGaleria; i++){             
+        minisGaleriaIds[i].src = galeriaActivaSrc[1][i].src;
+        minisGaleriaIds[i].onload = () => {
+            console.log(`${minisGaleriaIds[i].id} finalizo la carga`);
+            console.timeLog("imgMiniInv");
+        }
+    }
+    for(let i = 0; i < longitudDeGaleria - 1; i++){
+        galeriaPantallaCompletaIds[i].src = galeriaActivaSrc[0][i + 1].src;
+        galeriaPantallaCompletaIds[i].onload = () => {
+            console.log(`${galeriaPantallaCompletaIds[i].id} finalizo la carga`);
+            console.timeLog("imgFullInv");
+        }
+    }
+}
