@@ -82,6 +82,7 @@ const renderGaleria = (inicio) => {
         minisGaleriaIds[i].src = galeriaActivaSrc[1][indiceDeLoop].src;
         indiceDeLoop++; 
     }
+    imagenPantallaCompleta.src = galeriaActivaSrc[0][indice].src;
 }
 renderGaleria(0); //indice 0 es el default de la galeria
 //Fin de render de galeria
@@ -160,8 +161,6 @@ minisGaleriaIds.forEach((mini) => {mini.onclick = () => {
     }
     //Se actualiza la galeria
     renderGaleria(indice);
-    //Se otorga el valor src correspondiente a la imagen de pantalla completa
-    imagenPantallaCompleta.src = galeriaActivaSrc[0][indice].src;
     //Se hace visible la pantalla completa
     pantallaCompleta.style.display = 'flex';
     //Sin el setTimeout no se veria la transición
