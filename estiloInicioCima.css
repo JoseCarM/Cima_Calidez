@@ -136,6 +136,7 @@ nav {
     padding: 0;
     margin: 10px;
     justify-content: center;
+    box-shadow: 5px 5px 14px 3px grey;
 }
 
 .imgPortadaCabanas {
@@ -322,11 +323,14 @@ img.cabezaDePajaroEspejo {
 #contenidoDeUbicacion iframe {
     width: 92%;
     height: 600px;
-    padding: 2%;
+    padding: 1%;
     margin: 2%;
     border: hsl(0, 0%, 80%) solid 3px;
     background-color: rgb(207,215,191);
+    border-radius: 40px;
+    box-shadow: 5px 5px 14px 3px grey;
 }
+
 
 #textoDeUbicacion h3, h5, h4 {
     padding: 2%;

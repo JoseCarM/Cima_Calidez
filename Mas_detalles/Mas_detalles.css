@@ -203,10 +203,11 @@ main {
     border-radius: 20px;
 }
 
-#galeria img{
+.imagenDeGaleria {
     padding: 2px;
     border-radius: 15px;
     cursor: zoom-in;
+    box-shadow: 5px 5px 14px 3px grey;
 }
 
 #galPrimaria {
@@ -234,6 +235,7 @@ main {
 
 #galeria .botonesGaleria {
     width: 15%;
+    padding: 10px;
     cursor: pointer;
     transition: all 0.1s;
 }
@@ -244,12 +246,12 @@ main {
 }
 
 #botonGaleriaIzq:active {
-    padding: 0 3px 0 2%;
+    padding: 0 20px 0 2%;
     transition: all 0.1s;
 }
 
 #botonGaleriaDer:active {
-    padding: 0 2% 0 3px;
+    padding: 0 2% 0 20px;
     transition: all 0.1s;
 }
 
@@ -267,6 +269,7 @@ main {
 
 #subGal1 {
     max-height: 157px;
+    padding-top: 5px;
 }
 
 #subGal2 {
@@ -419,8 +422,7 @@ footer a {
     header {
         height: 52px;
         bottom: 0px;
-        transition: all 1s;
-        touch-action: pan-y;
+        transition: all 0.65s;
     }
 
     #tabMovil {
@@ -517,9 +519,14 @@ footer a {
 
     /* Inicia Galeria */
 
+    .galeria {
+        width: 95%;
+    }
+
     #galPrimaria {
-        width: auto;
+        width: 95%;
         max-width: 470px;
+        padding-bottom: 10px;
     }
 
     #galeria img {
