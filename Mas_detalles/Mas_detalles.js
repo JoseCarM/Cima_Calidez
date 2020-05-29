@@ -110,7 +110,7 @@ const renderGaleria = (inicio) => {
 //Inicio de eventos para botones de galeria
 let indice = 0;
 renderGaleria(indice);
-let play = false; //El valor play es falso hasta que body carga por completo, vea linea 231
+let play = true;
 let botonesDeGaleria = ['botonGaleriaIzq', 'botonGaleriaDer', 'botonGaleriaPausaPlay'].map(Id => document.getElementById(Id));
     //Función logica para incrementar el indice global por 1 sin salir del rango 0-galeriaActivaSrc
 const incrementaIndice = () => {
@@ -136,13 +136,12 @@ const disminuyeIndice = () => {
 const playPausa = () => {
     if (play){
         botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
-        botonesDeGaleria[2].onload = () => play = false;
+        play = false;
     } else if (!play){
         botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPause.svg";
-        botonesDeGaleria[2].onload = () => play = true;
+        play = true;
     }
 }
-
     //Boton para visualizar a la derecha
 botonesDeGaleria[0].onclick = () => {   
     disminuyeIndice();
@@ -228,7 +227,6 @@ tabMovil.onclick = () => {
 
 //Una vez que termina de cargar el elemento body se inicia la carga de todas la imagenes no visibles
 document.querySelector('body').onload = () => {
-    playPausa(); //Se inicia la galeria
     console.timeLog("Body");
     console.time("imgMiniInv"); //Se agregan timers para control
     console.time("imgFullInv");
