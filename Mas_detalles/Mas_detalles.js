@@ -136,10 +136,10 @@ const disminuyeIndice = () => {
 const playPausa = () => {
     if (play){
         botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPlay.svg";
-        botonesDeGaleria[2].onload = () => play = false;
+        play = false;
     } else if (!play){
         botonesDeGaleria[2].src = "../recursos/Mas_detalles/iconos/botonGaleriaPause.svg";
-        botonesDeGaleria[2].onload = () => play = false;
+        play = true;
     }
 }
     //Boton para visualizar a la derecha
