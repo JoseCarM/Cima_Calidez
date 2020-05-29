@@ -1,5 +1,5 @@
 html {
-    font-family: Helvetica, sans-serif;
+    font-family:'Noto Serif', Helvetica, serif;
     -webkit-tap-highlight-color: transparent;
      /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
      touch-action: manipulation;
@@ -58,7 +58,7 @@ nav {
     font-weight: 600;
     color: rgb(0, 71, 18);
     justify-items: start;
-    padding: 10px 20px 6px 20px;
+    padding: 6px 20px 6px 20px;
     margin: 0 1%;
     border: rgba(102, 75, 0, 0.7) 2px solid;
     border-bottom: rgb(255, 255, 255) 2px solid;
