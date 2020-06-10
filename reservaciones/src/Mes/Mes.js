@@ -7,28 +7,32 @@ import FechaCal from '../FechaCal/FechaCal';
 class Mes extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            fechaActual: new Date(Date.now())
-        }
         this.mesActual = this.mesActual.bind(this);
         this.renderizarDias = this.renderizarDias.bind(this);
     }
     mesActual() {
         // Regresa el nombre del mes actual
+        let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         let mesNumerico = this.props.mes;
-        return this.state.meses[mesNumerico];
+        return meses[mesNumerico];
     }
     renderizarDias() {
+        // Genera los dias segun la logica del calendario gregoriano, tomando como prioridad el día de la semana para
+        // hacer un acomodo estetico
         const mesActualNumerico = this.props.mes;
-        const anioActual = this.state.fechaActual.getFullYear();
+        const anioActual = this.props.anio;
         let primerDia = new Date(anioActual, mesActualNumerico, 1);
         // Normalmante getDay() inicia en domingo, con este operador ternario iniciamos en lunes con valor en 1 hasta domingo con valor 7
         (primerDia.getDay() === 0)? primerDia = 6 : primerDia = primerDia.getDay() - 1;
+        // Este es un hack de la función Date para determinar la cantidad de dias que tiene el mes señalado
+        // incluye años viciestos
         const diasDelMes = (anio, mes) => {
             return new Date(anio, mes, 0).getDate();
         }
         const semanas = [];
+        // La primera fila asume la logica para determinar en que dia de la semana comienza el mes
+        // las siguientes filas mantienen su numero consecutivo y lo pasan como props al componente FechaCal
+        // toma en cuenta la cantidad de dias del mes señalado y no renderiza mas dias despues de este.
         const filaSemana = (numeroDeFila) => {
             let diasTranscurridos = numeroDeFila * 7;
             const fila = [];
