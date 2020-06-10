@@ -5,7 +5,7 @@ class FechaCal extends React.Component {
     render() {
         return (
             <div>
-                
+                {this.props.diaDelMes}
             </div>
         )
     }

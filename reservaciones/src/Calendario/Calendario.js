@@ -7,25 +7,19 @@ class Calendario extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             fechaActual: new Date(Date.now())
         }
         this.mesActual = this.mesActual.bind(this);
-        this.primerDia = this.diaSemanaPrimeroDelMes.bind(this);
         this.renderizarDias = this.renderizarDias.bind(this);
     }
     mesActual() {
         // Regresa el nombre del mes actual
-        let mesNumerico = this.state.fechaActual.getMonth();
-        return this.state.meses[mesNumerico - 1];
-    }
-    diaSemanaPrimeroDelMes() {
-        // Regresa el numero de dia de la semana del primer día del mes, empezando 0 con domingo
-        let primerDia = new Date(this.state.fechaActual.getFullYear(), this.state.fechaActual.getMonth(), 1);
-        return primerDia.getDay();
+        let mesNumerico = this.props.mes;
+        return this.state.meses[mesNumerico];
     }
     renderizarDias() {
-        const mesActualNumerico = this.state.fechaActual.getMonth() + 3;
+        const mesActualNumerico = this.props.mes;
         const anioActual = this.state.fechaActual.getFullYear();
         let primerDia = new Date(anioActual, mesActualNumerico, 1);
         // Normalmante getDay() inicia en domingo, con este operador ternario iniciamos en lunes con valor en 1 hasta domingo con valor 7
@@ -35,13 +29,14 @@ class Calendario extends React.Component {
         }
         const semanas = [];
         const filaSemana = (numeroDeFila) => {
+            let diasTranscurridos = numeroDeFila * 7;
             const fila = [];
             for (let i = 1; i <= 7; i++){
-                if(i + numeroDeFila * 7 <= diasDelMes(anioActual, mesActualNumerico + 1) + primerDia){
+                if(diasTranscurridos + i <= diasDelMes(anioActual, mesActualNumerico + 1) + primerDia){
                     if(i <= primerDia && numeroDeFila == 0){
                         fila.push(<td></td>)
                     } else {
-                        fila.push(<td>{i + numeroDeFila * 7 - primerDia}</td>);
+                        fila.push(<td><FechaCal diaDelMes={diasTranscurridos + i - primerDia}/></td>);
                     }
                 }
             }
@@ -57,7 +52,7 @@ class Calendario extends React.Component {
             <div>
                 <table>
                     <thead>
-                        <th colSpan = '7'>{this.mesActual()}</th>
+                        <th colSpan = '7'>{this.mesActual()} {this.props.anio}</th>
                         <tr>
                             <td>Lun</td>
                             <td>Mar</td>
