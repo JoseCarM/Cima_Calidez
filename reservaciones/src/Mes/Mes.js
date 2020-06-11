@@ -35,20 +35,26 @@ class Mes extends React.Component {
         // toma en cuenta la cantidad de dias del mes señalado y no renderiza mas dias despues de este.
         const filaSemana = (numeroDeFila) => {
             let diasTranscurridos = numeroDeFila * 7;
+            let diaDelMes;
+            let fecha;
             const fila = [];
             for (let i = 1; i <= 7; i++){
                 if(diasTranscurridos + i <= diasDelMes(anioActual, mesActualNumerico + 1) + primerDia){
-                    if(i <= primerDia && numeroDeFila == 0){
-                        fila.push(<td></td>)
+                    if(i <= primerDia && numeroDeFila === 0){
+                        fila.push(<td key={`td${i}`}></td>)
                     } else {
-                        fila.push(<td><FechaCal diaDelMes={diasTranscurridos + i - primerDia}/></td>);
+                        diaDelMes = diasTranscurridos + i - primerDia;
+                        fecha = new Date(this.props.anio, this.props.mes, diaDelMes)
+                        // Si no determino la propieded de fecha en este loop e intento determinarla dentro del componente FechaCal
+                        // entonces cada vez que cambie el mes, los valores de fecha no cambiaran solo el aspecto
+                        fila.push(<td key={`td${i}`} ><FechaCal seleccionarFecha={this.props.seleccionarFecha} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fecha={fecha}/></td>);
                     }
                 }
             }
             return fila;
         }
         for(let i = 0; i < 6; i++){
-            semanas.push(<tr>{filaSemana(i)}</tr>)
+            semanas.push(<tr key={`tr${i}`}>{filaSemana(i)}</tr>)
         }
         return semanas;
     }
@@ -57,7 +63,9 @@ class Mes extends React.Component {
             <div>
                 <table>
                     <thead>
-                        <th colSpan = '7'>{this.mesActual()} {this.props.anio}</th>
+                        <tr>
+                            <th colSpan = '7'>{this.mesActual()} {this.props.anio}</th>
+                        </tr>
                         <tr>
                             <td>Lun</td>
                             <td>Mar</td>

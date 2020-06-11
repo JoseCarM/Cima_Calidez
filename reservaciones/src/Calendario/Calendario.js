@@ -11,12 +11,13 @@ class Calendario extends React.Component {
       this.state = {
         mesActual: new Date(Date.now()).getMonth(),
         mesVisible: new Date(Date.now()).getMonth(),
-        anioVisible: new Date(Date.now()).getFullYear()
+        anioVisible: new Date(Date.now()).getFullYear(),
       }
       this.segundoMesVisible = this.segundoMesVisible.bind(this);
       this.segundoAnioVisible = this.segundoAnioVisible.bind(this);
       this.mesAnterior = this.mesAnterior.bind(this);
       this.mesSiguiente = this.mesSiguiente.bind(this);
+      this.seleccionarFecha = this.seleccionarFecha.bind(this);
     }
     // Funcion dedicada a al componente del siguiente mes
     segundoMesVisible() {
@@ -70,13 +71,30 @@ class Calendario extends React.Component {
             this.setState({mesVisible: mes});
         }
     }
+    seleccionarFecha(fecha) {
+      if(this.props.fechaDeEntrada === null){
+        this.props.setFechasDeViaje({fechaDeEntrada: fecha});
+      } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
+        if(fecha <= this.props.fechaDeEntrada){
+          this.props.setFechasDeViaje({fechaDeEntrada: fecha})
+        } else {
+          this.props.setFechasDeViaje({fechaDeSalida: fecha})
+        }
+      } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida !== null){
+        this.props.setFechasDeViaje({
+          fechaDeEntrada: fecha,
+          fechaDeSalida: null
+        })
+      }
+    }
     render() {
       return (
         <div className="App">
-            <button onClick={this.mesAnterior}><img className='botones' src={botonArribaImg}/></button>
-            <Mes mes={this.state.mesVisible} anio={this.state.anioVisible}/>
-            <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()}/>
-            <button onClick={this.mesSiguiente}><img className='botones' src={botonAbajoImg}/></button>
+            <button onClick={this.mesAnterior}><img className='botones' src={botonArribaImg} alt='Mes anterior'/></button>
+            <Mes mes={this.state.mesVisible} anio={this.state.anioVisible} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} seleccionarFecha={this.seleccionarFecha}/>
+            {/* Aqui hay codigo casi repetitivo, debo buscar una manera de hacerlo DRY */}
+            <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} seleccionarFecha={this.seleccionarFecha}/>
+            <button onClick={this.mesSiguiente}><img className='botones' src={botonAbajoImg} alt='Mes siguiente'/></button>
         </div>
       );
     }

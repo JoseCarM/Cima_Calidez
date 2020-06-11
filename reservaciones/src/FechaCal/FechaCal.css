@@ -1,0 +1,28 @@
+.fechasPasadas {
+    color: gray;
+    user-select: none;
+    cursor: auto;
+}
+
+.fechasSeleccionadas {
+    background-color: teal;
+    font-weight: bold;
+}
+
+.fechasNoSeleccionadas:hover {
+    background-color: teal;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#fechaDeEntrada {
+    background-color: teal;
+    border-bottom-left-radius: 100%;
+    border-top-left-radius: 100%;
+}
+
+#fechaDeSalida {
+    background-color: teal;
+    border-bottom-right-radius: 100%;
+    border-top-right-radius: 100%;
+}
