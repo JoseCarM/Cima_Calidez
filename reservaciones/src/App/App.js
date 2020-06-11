@@ -10,21 +10,28 @@ class App extends React.Component {
       cabana: 'todas',
       fechaDeEntrada: null,
       fechaDeSalida: null,
-      numeroDeAdultos: 2,
-      numeroDeNinos: 0,
-      numeroDeBebes: 0,
-      numeroDeMascotas: 0,
+      huespedes: {
+        numeroDeAdultos: 2,
+        numeroDeNinos: 0,
+        numeroDeBebes: 0,
+        numeroDeMascotas: 0,
+        numeroMaximoDeHuespedes: 12
+      }
     }
     this.setFechasDeViaje = this.setFechasDeViaje.bind(this);
+    this.setNumeroDeHuespedes = this.setNumeroDeHuespedes.bind(this);
   }
   setFechasDeViaje(objeto){
+    this.setState(objeto);
+  }
+  setNumeroDeHuespedes(objeto){
     this.setState(objeto);
   }
   render() {
     return (
       <div className="App">
         <Calendario fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} setFechasDeViaje={this.setFechasDeViaje}/>
-        {/* <CantidadDeHuespedes numeroDeAdultos={this.state.numeroDeAdultos} numeroDeNinos={this.state.numeroDeNinos} numeroDeBebes={this.state.numeroDeBebes} numeroDeMascotas={this.state.numeroDeMascotas}/> */}
+        <CantidadDeHuespedes huespedes={this.state.huespedes} setNumeroDeHuespedes={this.setNumeroDeHuespedes}/>
       </div>
     );
   }
