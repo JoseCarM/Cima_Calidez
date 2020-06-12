@@ -73,15 +73,15 @@ class Calendario extends React.Component {
     }
     seleccionarFecha(fecha) {
       if(this.props.fechaDeEntrada === null){
-        this.props.setFechasDeViaje({fechaDeEntrada: fecha});
+        this.props.cambioDeEstado({fechaDeEntrada: fecha});
       } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
         if(fecha <= this.props.fechaDeEntrada){
-          this.props.setFechasDeViaje({fechaDeEntrada: fecha})
+          this.props.cambioDeEstado({fechaDeEntrada: fecha})
         } else {
-          this.props.setFechasDeViaje({fechaDeSalida: fecha})
+          this.props.cambioDeEstado({fechaDeSalida: fecha})
         }
       } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida !== null){
-        this.props.setFechasDeViaje({
+        this.props.cambioDeEstado({
           fechaDeEntrada: fecha,
           fechaDeSalida: null
         })

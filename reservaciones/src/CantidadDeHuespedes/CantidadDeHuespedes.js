@@ -1,4 +1,5 @@
 import React from 'react';
+import './CantidadDeHuespedes.css';
 
 class CantidadDeHuespedes extends React.Component {
     constructor(props){
@@ -50,7 +51,7 @@ class CantidadDeHuespedes extends React.Component {
                 let err = new Error('Debe haber un Bug en cambiarNumeroDeHuespedes de CantidadDeHuespedes');
                 console.log(err);
         }
-        this.props.setNumeroDeHuespedes(huespedes);
+        this.props.cambioDeEstado(huespedes);
     }
     // Estructura de las opciones
     renderizaOpciones(tipo, cantidad){

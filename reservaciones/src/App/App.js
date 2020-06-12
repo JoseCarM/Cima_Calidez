@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 import Calendario from '../Calendario/Calendario.js'
 import CantidadDeHuespedes from '../CantidadDeHuespedes/CantidadDeHuespedes'
+import Buscar from '../Buscar/Buscar';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       cabana: 'todas',
+      fechasOcupadas: [],
       fechaDeEntrada: null,
       fechaDeSalida: null,
       huespedes: {
@@ -16,22 +18,20 @@ class App extends React.Component {
         numeroDeBebes: 0,
         numeroDeMascotas: 0,
         numeroMaximoDeHuespedes: 12
-      }
+      },
+      cabanasFechasYPrecios: {}
     }
-    this.setFechasDeViaje = this.setFechasDeViaje.bind(this);
-    this.setNumeroDeHuespedes = this.setNumeroDeHuespedes.bind(this);
+    this.cambioDeEstado = this.cambioDeEstado.bind(this);
   }
-  setFechasDeViaje(objeto){
-    this.setState(objeto);
-  }
-  setNumeroDeHuespedes(objeto){
+  cambioDeEstado(objeto){
     this.setState(objeto);
   }
   render() {
     return (
       <div className="App">
-        <Calendario fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} setFechasDeViaje={this.setFechasDeViaje}/>
-        <CantidadDeHuespedes huespedes={this.state.huespedes} setNumeroDeHuespedes={this.setNumeroDeHuespedes}/>
+        <Calendario fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} cambioDeEstado={this.cambioDeEstado}/>
+        <CantidadDeHuespedes huespedes={this.state.huespedes} cambioDeEstado={this.cambioDeEstado}/>
+        <Buscar cabana={this.state.cabana} fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} />
       </div>
     );
   }
