@@ -1,0 +1,45 @@
+#presentacionDeCalendario {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    text-align: center;
+}
+
+#contenedorCalendario {
+    display: flex;
+    justify-content: center;
+}
+
+.botonesCalendario {
+    width: 30px;
+    transition: all 0.08s;
+    transform: rotate(-90deg);
+}
+
+.botonesCalendario:active {
+    width: 25px;
+}
+
+#contenedorCalendario button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+}
+
+@media screen and (max-width: 560px) {
+
+    #contenedorCalendario {
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .botonesCalendario {
+        transform: rotate(0deg);
+    }
+
+    #contenedorCalendario button{
+        margin: 5px 0;
+    }
+}

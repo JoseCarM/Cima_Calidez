@@ -3,8 +3,8 @@ const path = require('path');
 const cors = require('cors');
 const sqlite3 = require('sqlite3');
 const app = express();
-const sqlToJsDate = require('../util/SQLtoNodeDateParser.js');
-const jsToSqlDate = require('../util/NodeToSQLDateParser.js');
+const sqlToJsDate = require('../src/util/SQLtoNodeDateParser.js');
+const jsToSqlDate = require('../src/util/NodeToSQLDateParser.js');
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 

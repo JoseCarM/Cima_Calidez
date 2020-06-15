@@ -1,0 +1,56 @@
+.resultados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: rgb(241,220,175);
+    border: rgb(132,153,104) solid 1px;
+    border-radius: 5px;
+    max-width: 210px;
+    padding: 5px;
+    margin: 0 5px;
+    box-shadow: 2px 3px 8px black;
+}
+
+.resultados p{
+    margin: 2px 0;
+    font-weight: 700;
+    color: hsl(0, 0%, 40%)
+}
+
+.portadasResultados {
+    width: 95%;
+    max-width: 200px;
+    border: hsl(0, 0%, 100%) 2px solid;
+    padding: 3px;
+}
+
+.resultados button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+    border: rgb(204, 204, 204) solid 2px;
+    width: 95%;
+    margin: 2px 0;
+    margin-bottom: 2px;
+    transition: all 0.1s;
+}
+
+.resultados button:active {
+    background-color: rgb(207,215,191);
+    border: hsl(0, 0%, 75%) 2px solid;
+}
+
+.iconosDeBotones {
+    width: 12%;
+    margin: 1% 5%;
+
+}
+
+@media screen and (max-width: 750px){
+    .resultados{
+        margin: 5px;
+    }
+}

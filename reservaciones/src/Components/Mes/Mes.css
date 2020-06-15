@@ -1,0 +1,17 @@
+.meses {
+    font-size: 1rem;
+}
+#diasDeLaSemana td{
+    background-color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: gray;
+}
+
+td {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border-radius: 100%;
+}
+
