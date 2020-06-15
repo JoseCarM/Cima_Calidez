@@ -6,10 +6,13 @@ class Buscar extends React.Component {
         super(props);
         this.buscar = this.buscar.bind(this);
     }
-    async buscar(cabana, fechaDeEntrada, fechaDeSalida) {
-        const response = await fetch(`http://localhost:8080?cabana=${cabana}&fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}`);
-        const response_1 = await response.json();
-        this.props.cambioDeEstado({ cabanasFechasYPrecios: response_1 });
+    async buscar() {
+        let fechaDeEntrada = this.props.fechaDeEntrada;
+        let fechaDeSalida = this.props.fechaDeSalida;
+        let url = `http://localhost:8080?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}`;
+        const response = await fetch(url);
+        const jsonResponse = await response.json();
+        this.props.cambioDeEstadoComparador({ resultados: jsonResponse });
     }
     render() {
         return (

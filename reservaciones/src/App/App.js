@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import Calendario from '../Calendario/Calendario.js'
-import CantidadDeHuespedes from '../CantidadDeHuespedes/CantidadDeHuespedes'
-import Buscar from '../Buscar/Buscar';
+import Comparador from '../Comparador/Comparador';
+import Cabana from '../Cabana/Cabana';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      cabana: 'todas',
+      comparar: true,
       fechasOcupadas: [],
       fechaDeEntrada: null,
       fechaDeSalida: null,
@@ -18,8 +17,7 @@ class App extends React.Component {
         numeroDeBebes: 0,
         numeroDeMascotas: 0,
         numeroMaximoDeHuespedes: 12
-      },
-      cabanasFechasYPrecios: {}
+      }
     }
     this.cambioDeEstado = this.cambioDeEstado.bind(this);
   }
@@ -27,13 +25,19 @@ class App extends React.Component {
     this.setState(objeto);
   }
   render() {
-    return (
-      <div className="App">
-        <Calendario fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} cambioDeEstado={this.cambioDeEstado}/>
-        <CantidadDeHuespedes huespedes={this.state.huespedes} cambioDeEstado={this.cambioDeEstado}/>
-        <Buscar cabana={this.state.cabana} fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} />
-      </div>
-    );
+    if(this.state.comparar){
+      return(
+        <div>
+          <Comparador fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} huespedes={this.state.huespedes} cambioDeEstado={this.cambioDeEstado}/>
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          <Cabana fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} huespedes={this.state.huespedes} cambioDeEstado={this.cambioDeEstado}/>
+        </div>
+      )
+    }
   }
 }
 
