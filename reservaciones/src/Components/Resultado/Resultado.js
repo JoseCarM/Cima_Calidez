@@ -1,30 +1,24 @@
 import React from 'react';
-import './Resultado.css'
-import portadaCab1 from './portadaCab1.png'
-import portadaCab2 from './portadaCab2.png'
-import portadaCab3 from './portadaCab3.png'
-import portadaCab4 from './portadaCab4.png'
-import portadaCab5 from './portadaCab5.png'
-import iconoReservar from './booking.svg'
-import iconoMasDetalles from './armchair.svg'
+import './Resultado.css';
+import MasDetalles from '../MasDetalles/MasDetalles';
+import Reservar from '../Reservar/Reservar';
+import nombreDeCabana from '../../util/switchNombreDeCabana';
+import portadaCab1 from '../../imagenes/portadaCab1.png'
+import portadaCab2 from '../../imagenes/portadaCab2.png'
+import portadaCab3 from '../../imagenes/portadaCab3.png'
+import portadaCab4 from '../../imagenes/portadaCab4.png'
+import portadaCab5 from '../../imagenes/portadaCab5.png'
 let imagenesDePortada = ['', portadaCab1, portadaCab2, portadaCab3, portadaCab4, portadaCab5];
 
 class Resultado extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            cabana: '',
-            fechaDeEntrada: '',
-            fechaDeSalida: ''
-        }
-    }
     render() {
         return (
             <div className='resultados'>
-                <p>{`Cabaña ${this.props.cabana}`}</p>
+                <p>{`Cabaña ${nombreDeCabana(this.props.cabana)}`}</p>
                 <img className='portadasResultados' src={imagenesDePortada[this.props.cabana]} alt='Portada de cabaña'/>
                 <p>{`Total: $${this.props.precio}`}</p>
-                <button>Reservar<img className='iconosDeBotones' src={iconoReservar} alt='Reservar' /></button><button>Más detalles<img className='iconosDeBotones' src={iconoMasDetalles} alt='Más detalles' /></button>
+                <Reservar visibilidad={true} cambioDeEstadoApp={this.props.cambioDeEstadoApp} precio={this.props.precio} cabanasARentar={[this.props.cabana]}/>
+                <MasDetalles />
             </div>
         )
     }

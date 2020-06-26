@@ -1,6 +1,7 @@
 import React from 'react';
 import './Mes.css';
 import FechaCal from '../FechaCal/FechaCal';
+import diasDelMes from '../../util/diasDelMes'
 
 
 
@@ -24,11 +25,6 @@ class Mes extends React.Component {
         let primerDia = new Date(anioActual, mesActualNumerico, 1);
         // Normalmante getDay() inicia en domingo, con este operador ternario iniciamos en lunes con valor en 1 hasta domingo con valor 7
         (primerDia.getDay() === 0)? primerDia = 6 : primerDia = primerDia.getDay() - 1;
-        // Este es un hack de la función Date para determinar la cantidad de dias que tiene el mes señalado
-        // incluye años viciestos
-        const diasDelMes = (anio, mes) => {
-            return new Date(anio, mes, 0).getDate();
-        }
         const semanas = [];
         // La primera fila asume la logica para determinar en que dia de la semana comienza el mes
         // las siguientes filas mantienen su numero consecutivo y lo pasan como props al componente FechaCal
@@ -39,7 +35,7 @@ class Mes extends React.Component {
             let fecha;
             const fila = [];
             for (let i = 1; i <= 7; i++){
-                if(diasTranscurridos + i <= diasDelMes(anioActual, mesActualNumerico + 1) + primerDia){
+                if(diasTranscurridos + i <= diasDelMes(anioActual, mesActualNumerico) + primerDia){
                     if(i <= primerDia && numeroDeFila === 0){
                         fila.push(<td key={`td${i}`}></td>)
                     } else {
@@ -47,7 +43,7 @@ class Mes extends React.Component {
                         fecha = new Date(this.props.anio, this.props.mes, diaDelMes)
                         // Si no determino la propieded de fecha en este loop e intento determinarla dentro del componente FechaCal
                         // entonces cada vez que cambie el mes, los valores de fecha no cambiaran solo el aspecto
-                        fila.push(<td key={`td${i}`} ><FechaCal seleccionarFecha={this.props.seleccionarFecha} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fecha={fecha}/></td>);
+                        fila.push(<td key={`td${i}`} ><FechaCal key={fecha}  fecha={fecha} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida}  fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/></td>);
                     }
                 } else {
                     fila.push(<td key={`td${i}`} ></td>)

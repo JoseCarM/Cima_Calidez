@@ -1,8 +1,8 @@
 import React from 'react';
 import './Calendario.css';
 import Mes from '../Mes/Mes';
-import botonArribaImg from './botonArriba.svg'
-import botonAbajoImg from './botonAbajo.svg'
+import botonArribaImg from '../../imagenes/botonArriba.svg'
+import botonAbajoImg from '../../imagenes/botonAbajo.svg'
 
 
 class Calendario extends React.Component {
@@ -18,7 +18,6 @@ class Calendario extends React.Component {
       this.segundoAnioVisible = this.segundoAnioVisible.bind(this);
       this.mesAnterior = this.mesAnterior.bind(this);
       this.mesSiguiente = this.mesSiguiente.bind(this);
-      this.seleccionarFecha = this.seleccionarFecha.bind(this);
     }
     // Funcion dedicada a al componente del siguiente mes
     segundoMesVisible() {
@@ -72,35 +71,34 @@ class Calendario extends React.Component {
             this.setState({mesVisible: mes});
         }
     }
-    seleccionarFecha(fecha) {
-      //Este reset evita que despues de mostrar resultados el usuario pueda seleccionar otras fechas y los 
-      //resultados se sigan mostrando aunque no estén disponibles.
-      this.props.cambioDeEstadoComparador({resultados: []})
-      if(this.props.fechaDeEntrada === null){
-        this.props.cambioDeEstadoApp({fechaDeEntrada: fecha});
-      } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
-        if(fecha <= this.props.fechaDeEntrada){
-          this.props.cambioDeEstadoApp({fechaDeEntrada: fecha})
-        } else {
-          this.props.cambioDeEstadoApp({fechaDeSalida: fecha})
-        }
-      } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida !== null){
-        this.props.cambioDeEstadoApp({
-          fechaDeEntrada: fecha,
-          fechaDeSalida: null
-        })
-      }
-    }
     render() {
+      let fechaDeEntrada = this.props.fechaDeEntrada;
+      let fechaDeSalida = this.props.fechaDeSalida;
       return (
         <div id='presentacionDeCalendario'>
           <h1>Seleccione sus fechas</h1>
           <div id="contenedorCalendario">
               <button onClick={this.mesAnterior}><img className='botonesCalendario' src={botonArribaImg} alt='Mes anterior'/></button>
-              <Mes mes={this.state.mesVisible} anio={this.state.anioVisible} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} seleccionarFecha={this.seleccionarFecha}/>
+              <Mes mes={this.state.mesVisible} anio={this.state.anioVisible} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
               {/* Aqui hay codigo casi repetitivo, debo buscar una manera de hacerlo DRY */}
-              <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} seleccionarFecha={this.seleccionarFecha}/>
+              <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
               <button onClick={this.mesSiguiente}><img className='botonesCalendario' src={botonAbajoImg} alt='Mes siguiente'/></button>
+          </div>
+          <div id='fechaDeEntradaYSalida'> 
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha de entrada</th>
+                  <th>Fecha de salida</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{fechaDeEntrada? fechaDeEntrada.getDate() + '/' : ''}{fechaDeEntrada? fechaDeEntrada.getMonth() + '/' : ''}{fechaDeEntrada? fechaDeEntrada.getFullYear() : ''}</td>
+                  <td>{fechaDeSalida? fechaDeSalida.getDate() + '/' : ''}{fechaDeSalida? fechaDeSalida.getMonth() + '/' : ''}{fechaDeSalida? fechaDeSalida.getFullYear() : ''}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 

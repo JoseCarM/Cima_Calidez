@@ -6,11 +6,12 @@
     font-size: 0.7rem;
     font-weight: 700;
     color: gray;
+    height: 0;
 }
 
 td {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     border-radius: 100%;
 }

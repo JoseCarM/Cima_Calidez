@@ -1,0 +1,33 @@
+
+.cabanaDeOpcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin: 0 5px;
+}
+
+.cabanasDeOpcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.opcionesResultadosCombinados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 560px){
+    .cabanasDeOpcion{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .cabanaDeOpcion{
+        max-width: 45%;
+    }
+}

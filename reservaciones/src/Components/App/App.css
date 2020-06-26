@@ -1,7 +1,10 @@
 html {
-  background-image: url('./background.jpg');
+  background-image: url('../../imagenes/background.jpg');
   background-attachment: fixed;
   background-size: cover;
+  -webkit-tap-highlight-color: transparent;
+   /*Supported by WebKit/Safari, Blink/Chrome, and some versions of Internet Explorer and Microsoft Edge. */
+   touch-action: manipulation;
 }
 
 button {
@@ -15,13 +18,20 @@ button:focus {
 
 table {
   background-color: white;
-  border: black solid 1px;
   border-spacing: 0;
   border-radius: 10px;
   margin: 0 3px;
   padding: 5px;
+  box-shadow: 2px 3px 8px black;
 }
 
 tbody {
   background-color: white;
+}
+
+
+@media screen and (max-width: 560px){
+  table{
+    margin: 3px;
+  }
 }

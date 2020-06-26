@@ -28,7 +28,27 @@
     width: 30px;
 }
 
+#fechaDeEntradaYSalida{
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+#fechaDeEntradaYSalida table{
+    width: 88%;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+#fechaDeEntradaYSalida td, #fechaDeEntradaYSalida th{
+    height: 23px;
+    width: 50%;
+}
+
 @media screen and (max-width: 560px) {
+    #presentacionDeCalendario h1{
+        margin-top: 50px;
+    }
 
     #contenedorCalendario {
         flex-flow: column;
@@ -41,5 +61,8 @@
 
     #contenedorCalendario button{
         margin: 5px 0;
+    }
+    #fechaDeEntradaYSalida table{
+        font-size: 0.8rem;
     }
 }

@@ -1,0 +1,21 @@
+#botonMasDetalles {
+    background-color: rgb(0, 71, 18);
+    color: white;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    width: 125px;
+    height: 45px;
+    clip-path: polygon(0 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
+    transition: all 0.5s;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#botonMasDetalles:hover {
+    border-radius: 0;
+    clip-path: polygon(0 0%, 80% 0%, 100% 50%, 80% 100%, 0 100%);
+}
+
+#botonMasDetalles:focus {
+    background-color: rgb(136, 109, 0);
+}

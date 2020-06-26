@@ -1,4 +1,4 @@
-.fechasPasadas, .fechasSeleccionadas, .fechasNoSeleccionadas {
+.fechasPasadas, .fechasSeleccionadas, .fechasNoSeleccionadas, .fechasReservadas {
     font-size: 1rem;
     display: flex;
     justify-content: center;
@@ -13,6 +13,14 @@
     color: gray;
     user-select: none;
     cursor: auto;
+}
+
+.fechasReservadas {
+    background-color: hsl(0, 0%, 90%);
+    text-decoration: line-through;
+    color: gray;
+    cursor: not-allowed;
+    border-radius: 8px;
 }
 
 .fechasSeleccionadas {

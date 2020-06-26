@@ -1,0 +1,125 @@
+#menu{
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+
+}
+
+#botonMenu {
+    position: absolute;
+    text-align: center;
+    background-color: rgb(0, 71, 18);
+    color: white;
+    font-size: 1.1rem;
+    clip-path: circle(45%);
+    width: 60px;
+    height: 60px;
+    transition: all 0.5s;
+}
+
+#botonMenu:hover {
+    background-color: rgb(136, 109, 0);
+}
+
+#botonMenu p{
+    margin: 0;
+    padding: 0%;
+}
+
+#contenedorOpcionesMenu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 0px;
+}
+
+.itemsDeMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: hsl(51, 100%, 84%);
+    clip-path: circle(50%);
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.itemsDeMenu:hover{
+    background-color: hsl(108, 100%, 84%);
+    color: rgb(136, 109, 0);
+    width: 160px;
+    height: 160px;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
+.itemsDeMenuNoVisibles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: white;
+    clip-path: circle(0%);
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    transition: all 0.5s;
+    font-size: 0rem;
+    opacity: 0;
+}
+
+.itemsDeMenu img{
+    transition: all 0.5s;
+    width: 50px;
+    user-select: none;
+}
+
+.itemsDeMenu p{
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(0, 71, 18);
+    transition: all 0.5s;
+    user-select: none;
+}
+
+.itemsDeMenu:hover p{
+    color: rgb(136, 109, 0);
+    transition: all 0.5s;
+}
+
+.itemsDeMenuNoVisibles img{
+    transition: all 0.5s;
+    width: 1px;
+}
+
+#menuCab5{
+    top: 50px;
+}
+
+@media screen and (max-width: 560px){
+    #contenedorOpcionesMenu{
+        justify-content: space-evenly;
+    }
+
+    .itemsDeMenu{
+        width: 120px;
+        height: 120px;
+    }
+
+    .itemsDeMenu:hover{
+        width: 130px;
+        height: 130px;
+    }
+
+    .itemsDeMenu img{
+        width: 50px;
+    }
+
+    .itemsDeMenu p{
+        font-size: 0.8rem;
+    }
+}

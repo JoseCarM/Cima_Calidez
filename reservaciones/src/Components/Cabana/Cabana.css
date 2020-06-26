@@ -1,0 +1,54 @@
+#cabana {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#cabanaInformacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: rgba(255, 255, 255, 70%);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0 5px;
+    box-shadow: 2px 3px 8px black;
+    color: rgb(53, 14, 0);
+}
+
+#cabanaInformacion img{
+    border-radius: 10px;
+    width: 100%;
+}
+
+#precioVisible{
+    opacity: 1;
+    transition: all 1s;
+
+}
+
+#precioNoVisible{
+    color: hsl(0, 0%, 40%);
+    opacity: 0;
+}
+
+#contenedorDeBotones {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    transition: all 1s;
+}
+
+@media screen and (max-width: 560px){
+    #cabana {
+        flex-flow: column-reverse;
+    }
+    #cabanaInformacion{
+        margin: 15px 15px 0 15px;
+    }
+    #cabanaOpciones{
+        margin-bottom: 15px;
+    }
+}

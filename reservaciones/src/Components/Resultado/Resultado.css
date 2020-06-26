@@ -3,8 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    background-color: rgb(241,220,175);
-    border: rgb(132,153,104) solid 1px;
+    background-color: rgba(255, 255, 255, 70%);
     border-radius: 5px;
     max-width: 210px;
     padding: 5px;
@@ -20,33 +19,15 @@
 
 .portadasResultados {
     width: 95%;
-    max-width: 200px;
+    max-width: 165px;
     border: hsl(0, 0%, 100%) 2px solid;
     padding: 3px;
+    clip-path: circle(40%);
+    transition: all 1s;
 }
 
-.resultados button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    background-color: white;
-    border: rgb(204, 204, 204) solid 2px;
-    width: 95%;
-    margin: 2px 0;
-    margin-bottom: 2px;
-    transition: all 0.1s;
-}
-
-.resultados button:active {
-    background-color: rgb(207,215,191);
-    border: hsl(0, 0%, 75%) 2px solid;
-}
-
-.iconosDeBotones {
-    width: 12%;
-    margin: 1% 5%;
-
+.portadasResultados:hover {
+    clip-path: circle(70%);
 }
 
 @media screen and (max-width: 750px){

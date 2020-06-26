@@ -8,11 +8,10 @@
     border-radius: 15px;
     transition: all 0.08s;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 #botonBuscar:active {
     background-color: rgb(27, 78, 40);
-    color: white;
     font-size: 0.9rem;
-    width: 100px;
 }

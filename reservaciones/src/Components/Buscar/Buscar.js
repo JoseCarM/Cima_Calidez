@@ -9,10 +9,18 @@ class Buscar extends React.Component {
     async buscar() {
         let fechaDeEntrada = this.props.fechaDeEntrada;
         let fechaDeSalida = this.props.fechaDeSalida;
-        let url = `http://localhost:8080?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}`;
-        const response = await fetch(url);
-        const jsonResponse = await response.json();
-        this.props.cambioDeEstadoComparador({ resultados: jsonResponse });
+        let url = `http://192.168.1.70:8080/comparador?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}`;
+        if(fechaDeEntrada !== null && fechaDeSalida !== null){
+            const response = await fetch(url);
+            const jsonResponse = await response.json();
+            this.props.cambioDeEstadoComparador({ 
+                resultados: jsonResponse,
+                nuevaBusqueda: false
+             });
+            let listaDeResultados;
+            document.getElementById('listaDeResultadosColumna')? listaDeResultados = document.getElementById('listaDeResultadosColumna') : listaDeResultados = document.getElementById('listaDeResultadosFila');
+            listaDeResultados.scrollIntoView({behavior: 'smooth'});
+        }
     }
     render() {
         return (

@@ -1,0 +1,29 @@
+#botonReservar {
+    background-color: rgb(102, 55, 0);
+    color: white;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    width: 125px;
+    height: 45px;
+    clip-path: polygon(0 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
+    transition: all 0.5s;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#botonReservarNoVisible{
+    z-index: -1;
+    margin-left: -50%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#botonReservar:hover {
+    background-color: rgb(53, 14, 0);
+    border-radius: 0;
+    clip-path: polygon(0 0%, 80% 0%, 100% 50%, 80% 100%, 0 100%);
+}
+
+#botonReservar:focus {
+    background-color: rgb(136, 109, 0);
+}
