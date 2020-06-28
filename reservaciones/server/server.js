@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const sqlite3 = require('sqlite3');
+const bodyParser = require('body-parser');
 const app = express();
 const jsToSqlDate = require('../src/util/NodeToSQLDateParser.js');
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
+app.use(bodyParser.json());
 
 const db = new sqlite3.Database('../db/Disponibilidad_y_tarifas.db');
 
@@ -25,22 +27,26 @@ app.get('/comparador', function (req, res) {
     db.all(sql, parametros, (error, rows) => {
         let cabanasDisponibles = [1, 2, 3, 4, 5];
         rows.forEach(row => {
-            let indice = cabanasDisponibles.indexOf(row.Cabana);
-            if(indice !== -1){
-                cabanasDisponibles.splice(indice,1)
-            }
+            let cabana = row.Cabana.split('-');
+            cabana = cabana.map(cabana => Number(cabana));
+            cabana.forEach(numero => {
+                let indice = cabanasDisponibles.indexOf(numero);
+                if(indice !== -1){
+                    cabanasDisponibles.splice(indice,1)
+                }
+            })
         })
+        if(error){
+            return res.send(error.message);
+        }
         return res.send(JSON.stringify(cabanasDisponibles));
     })
 });
 
 app.get('/disponibilidad_de_cabana', function (req, res) {
     let cabana = req.query.cabana;
-    let sql = "SELECT Fecha_de_entrada, Fecha_de_salida FROM Disponibilidad WHERE Cabana == $cabana";
-    let parametros = {
-        $cabana: cabana,
-    }
-    db.all(sql, parametros, (error, rows) => {
+    let sql = `SELECT Fecha_de_entrada, Fecha_de_salida FROM Disponibilidad WHERE Cabana LIKE '%${cabana}%'`;
+    db.all(sql, (error, rows) => {
         let reservaciones = [];
         rows.forEach(row => {
             reservaciones.push({
@@ -51,6 +57,46 @@ app.get('/disponibilidad_de_cabana', function (req, res) {
         return res.send(JSON.stringify(reservaciones));
     })
 });
+
+app.post('/reservacion', function(req, res) {
+    console.log(req.body)
+    let datos = req.body;
+    datos.fechaDeEntrada = jsToSqlDate(datos.fechaDeEntrada);
+    datos.fechaDeSalida = jsToSqlDate(datos.fechaDeSalida);
+    let sql = "INSERT INTO Reservaciones (Codigo_de_reservacion, Cabana, Fecha_de_entrada, Fecha_de_salida, Adultos, Ninos, Bebes, Mascotas, Costo_total) VALUES ($codigoDeReservacion, $cabana, $fechaDeEntrada, $fechaDeSalida, $adultos, $ninos, $bebes, $mascotas, $costoTotal)";
+    let parametros = {
+        $codigoDeReservacion: datos.codigoDeReservacion,
+        $cabana: datos.cabana,
+        $fechaDeEntrada: datos.fechaDeEntrada,
+        $fechaDeSalida: datos.fechaDeSalida,
+        $adultos: datos.numeroDeAdultos,
+        $ninos: datos.numeroDeNinos,
+        $bebes: datos.numeroDeBebes,
+        $mascotas: datos.numeroDeMascotas,
+        $costoTotal: datos.costoTotal
+    }
+    db.run(sql, parametros, (error) => {
+        if(error){
+            console.log(error.message);
+            return res.status(400).send(error);
+        }else{
+            return res.send(`Se publicó la reservación temporal con ID ${this.lastID}`);
+        } 
+    })
+})
+
+app.delete('/reservacion', function(req, res){
+    let sql = "DELETE FROM Reservaciones WHERE Codigo_de_reservacion = $codigoDeReservacion"
+    let parametros = {$codigoDeReservacion: req.body.codigoDeReservacion}
+    db.run(sql, parametros, (error) => {
+        if(error){
+            console.log(error.message)
+            return res.status(404).send(error);
+        }else{
+            return res.send()
+        }
+    })
+})
 
 
 app.listen(process.env.PORT || 8080, () =>{
