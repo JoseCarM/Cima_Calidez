@@ -52,7 +52,7 @@ class BotonPaypal extends React.Component {
               description: "Cabañas",
               amount: {
                 currency_code: "MXN",
-                value: this.props.costoTotal
+                value: this.props.pago
               }
             }
           ], 
@@ -70,6 +70,10 @@ class BotonPaypal extends React.Component {
           };
           console.log("Payment Approved: ", paymentData);
           this.setState({ botonVisible: false, pagado: true });
+          let { reservacion } = this.props;
+          reservacion.fechaDeConfirmacion = new Date(Date.now());
+          reservacion.estatus = 'Confirmada';
+          this.props.registrarReservacion(reservacion)
         });
     };
 

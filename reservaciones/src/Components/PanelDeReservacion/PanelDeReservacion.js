@@ -3,6 +3,7 @@ import './PanelDeReservacion.css';
 import nombreDeCabana from '../../util/switchNombreDeCabana';
 import fechaLarga from '../../util/fechaLarga';
 import generadorDeCodigoTemp from '../../util/generadorDeCodigoTemp';
+import generadorDeCodigoReservacion from '../../util/generadorDeCodigoReservacion';
 import portadaCab1 from '../../imagenes/portadaCab1.png'
 import portadaCab2 from '../../imagenes/portadaCab2.png'
 import portadaCab3 from '../../imagenes/portadaCab3.png'
@@ -11,7 +12,7 @@ import portadaCab5 from '../../imagenes/portadaCab5.png'
 import BotonPaypal from '../BotonPaypal/BotonPaypal';
 let imagenesDePortada = ['', portadaCab1, portadaCab2, portadaCab3, portadaCab4, portadaCab5];
 let porcentajeDePrimerPago = 50;
-let reservacion = {};
+let reservacionTemporal = {};
 function cancelarReservacion(datos){
     let url = `http://192.168.1.70:8080/reservacion`;
     fetch(url, {
@@ -27,16 +28,12 @@ class PanelDeReservacion extends React.Component {
         super(props);
         this.state = {
             datosDeUsuarioValidos: false,
-            datosDeUsuario: {
-                nombre: '',
-                telefono: '',
-                correoElectronico: ''
-            }
+            reservacion: {}
         }
         this.continuarAPaypal = this.continuarAPaypal.bind(this);
         this.cambioSliderAnticipo = this.cambioSliderAnticipo.bind(this);
         this.registrarReservacion = this.registrarReservacion.bind(this);
-        this.regresar  = this.regresar.bind(this)
+        this.regresar  = this.regresar.bind(this);
     }
     async registrarReservacion(datos){
         let url = `http://192.168.1.70:8080/reservacion`;
@@ -55,16 +52,17 @@ class PanelDeReservacion extends React.Component {
         return cabanas;
     }
     componentDidMount(){
-        reservacion.codigoDeReservacion = generadorDeCodigoTemp();
-        reservacion.cabana = this.props.cabanasARentar.join('-');
-        reservacion.fechaDeEntrada = this.props.fechaDeEntrada;
-        reservacion.fechaDeSalida = this.props.fechaDeSalida;
-        reservacion.numeroDeAdultos = this.props.huespedes.numeroDeAdultos;
-        reservacion.numeroDeNinos = this.props.huespedes.numeroDeNinos;
-        reservacion.numeroDeBebes = this.props.huespedes.numeroDeBebes;
-        reservacion.numeroDeMascotas = this.props.huespedes.numeroDeMascotas;
-        reservacion.costoTotal = this.props.costoTotal;
-        this.registrarReservacion(reservacion);
+        reservacionTemporal.codigoDeReservacion = generadorDeCodigoTemp();
+        reservacionTemporal.estatus = 'Pago pendiente';
+        reservacionTemporal.cabana = this.props.cabanasARentar.join('-');
+        reservacionTemporal.fechaDeEntrada = this.props.fechaDeEntrada;
+        reservacionTemporal.fechaDeSalida = this.props.fechaDeSalida;
+        reservacionTemporal.numeroDeAdultos = this.props.huespedes.numeroDeAdultos;
+        reservacionTemporal.numeroDeNinos = this.props.huespedes.numeroDeNinos;
+        reservacionTemporal.numeroDeBebes = this.props.huespedes.numeroDeBebes;
+        reservacionTemporal.numeroDeMascotas = this.props.huespedes.numeroDeMascotas;
+        reservacionTemporal.costoTotal = this.props.costoTotal;
+        this.registrarReservacion(reservacionTemporal);
         setTimeout(() => {document.getElementById('panelDeReservacion').style.opacity = 1}, 0);
         document.getElementById('porcentajeDePrimerPago').innerHTML = porcentajeDePrimerPago + '%';
         let primerPago = this.props.costoTotal * (0.01 * porcentajeDePrimerPago);
@@ -73,8 +71,8 @@ class PanelDeReservacion extends React.Component {
         segundoPago = segundoPago.toFixed(2);
         document.getElementById('textoPrimerPago').innerHTML = `Primer pago hoy: $${primerPago} MXN`;
         document.getElementById('textoSegundoPago').innerHTML = `Segundo pago el día de entrada: $${segundoPago} MXN`;
-        reservacion.anticipo = primerPago;
-        reservacion.pagoPendiente = segundoPago;
+        reservacionTemporal.anticipo = Number(primerPago);
+        reservacionTemporal.pagoPendiente = Number(segundoPago);
     }
     cambioSliderAnticipo() {
         porcentajeDePrimerPago = document.getElementById('anticipo').value;
@@ -85,27 +83,28 @@ class PanelDeReservacion extends React.Component {
         segundoPago = segundoPago.toFixed(2);
         document.getElementById('textoPrimerPago').innerHTML = `Primer pago hoy: $${primerPago} MXN`;
         document.getElementById('textoSegundoPago').innerHTML = `Segundo pago el día de entrada: $${segundoPago} MXN`;
-        reservacion.anticipo = primerPago;
-        reservacion.pagoPendiente = segundoPago;
+        reservacionTemporal.anticipo = Number(primerPago);
+        reservacionTemporal.pagoPendiente = Number(segundoPago);
     }
     regresar(){
-        cancelarReservacion(reservacion);
+        console.log(reservacionTemporal.codigoDeReservacion)
+        cancelarReservacion(reservacionTemporal);
         this.props.cambioDeEstadoApp({listoParaReservar: false, costoTotal: '', cabanasARentar: null})
     }
     continuarAPaypal(){
+        let reservacion = Object.assign({}, reservacionTemporal);
         let formDatosDelCliente = document.forms['formDatosDelCliente'];
+        reservacion.nombre = document.getElementById('nombre').value;
+        reservacion.telefono = document.getElementById('telefono').value;
+        reservacion.correoElectronico = document.getElementById('correoElectronico').value;
+        reservacion.codigoDeReservacion = generadorDeCodigoReservacion(reservacion);
         if(formDatosDelCliente.reportValidity()){
             this.setState({
                 datosDeUsuarioValidos: true,
-                datosDeUsuario: {
-                    nombre: document.getElementById('nombre').value,
-                    telefono: document.getElementById('telefono').value,
-                    correoElectronico: document.getElementById('correoElectronico').value
-                }
-                
+                reservacion: reservacion
             })
         }
-    } 
+    }
     render(){
         let huespedes = this.props.huespedes;
         return(
@@ -132,8 +131,8 @@ class PanelDeReservacion extends React.Component {
                                 <label htmlFor='anticipo' id='porcentajeDePrimerPago'></label>
                             </form>
                         )}
-                        <h4 id='textoPrimerPago'>Primer pago hoy: ${reservacion.primerPago} MXN</h4>
-                        <h4 id='textoSegundoPago'>Segundo pago el día de entrada: ${reservacion.segundoPago} MXN</h4>
+                        <h4 id='textoPrimerPago'>Primer pago hoy: ${reservacionTemporal.primerPago} MXN</h4>
+                        <h4 id='textoSegundoPago'>Segundo pago el día de entrada: ${reservacionTemporal.segundoPago} MXN</h4>
                     </section>
                     <section id='datosDelCliente'>
                         <h1>Información de usuario</h1>
@@ -158,11 +157,11 @@ class PanelDeReservacion extends React.Component {
                         )}
                         {this.state.datosDeUsuarioValidos && (
                             <div>
-                                <h2>Nombre: {this.state.datosDeUsuario.nombre}</h2>
+                                <h2>Nombre: {this.state.reservacion.nombre}</h2>
                                 <br/>
-                                <h2>Teléfono: {this.state.datosDeUsuario.telefono}</h2>
+                                <h2>Teléfono: {this.state.reservacion.telefono}</h2>
                                 <br/>
-                                <h2>email: {this.state.datosDeUsuario.correoElectronico}</h2>
+                                <h2>email: {this.state.reservacion.correoElectronico}</h2>
                                 <br/>
                                 <button onClick={() => this.setState({datosDeUsuarioValidos: false})}>Editar</button>
                             </div>
@@ -171,7 +170,7 @@ class PanelDeReservacion extends React.Component {
                 </div>
                 {this.state.datosDeUsuarioValidos && (
                     <section id='seccionPaypal'>
-                        <BotonPaypal costoTotal={this.props.costoTotal * (0.01 * this.state.porcentajeDePrimerPago).toFixed(2)} visibilidad={this.state.datosDeUsuarioValidos}/>
+                        <BotonPaypal pago={this.state.reservacion.anticipo} visibilidad={this.state.datosDeUsuarioValidos} reservacion={this.state.reservacion} registrarReservacion={this.registrarReservacion}/>
                     </section>
                 )}
             </div>
@@ -180,7 +179,7 @@ class PanelDeReservacion extends React.Component {
 }
 
 window.addEventListener('beforeunload', function (e) {
-    cancelarReservacion(reservacion)
+    cancelarReservacion(reservacionTemporal);
   });
 
 export default PanelDeReservacion;
