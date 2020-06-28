@@ -10,6 +10,7 @@ import portadaCab4 from '../../imagenes/portadaCab4.png'
 import portadaCab5 from '../../imagenes/portadaCab5.png'
 import BotonPaypal from '../BotonPaypal/BotonPaypal';
 let imagenesDePortada = ['', portadaCab1, portadaCab2, portadaCab3, portadaCab4, portadaCab5];
+let porcentajeDePrimerPago = 50;
 let reservacion = {};
 function cancelarReservacion(datos){
     let url = `http://192.168.1.70:8080/reservacion`;
@@ -30,8 +31,7 @@ class PanelDeReservacion extends React.Component {
                 nombre: '',
                 telefono: '',
                 correoElectronico: ''
-            },
-            porcentajeDePrimerPago: 50,
+            }
         }
         this.continuarAPaypal = this.continuarAPaypal.bind(this);
         this.cambioSliderAnticipo = this.cambioSliderAnticipo.bind(this);
@@ -66,10 +66,10 @@ class PanelDeReservacion extends React.Component {
         reservacion.costoTotal = this.props.costoTotal;
         this.registrarReservacion(reservacion);
         setTimeout(() => {document.getElementById('panelDeReservacion').style.opacity = 1}, 0);
-        document.getElementById('porcentajeDePrimerPago').innerHTML = this.state.porcentajeDePrimerPago + '%';
-        let primerPago = this.props.costoTotal * (0.01 * this.state.porcentajeDePrimerPago);
+        document.getElementById('porcentajeDePrimerPago').innerHTML = porcentajeDePrimerPago + '%';
+        let primerPago = this.props.costoTotal * (0.01 * porcentajeDePrimerPago);
         primerPago = primerPago.toFixed(2);
-        let segundoPago = this.props.costoTotal * ( 1 - (0.01 * this.state.porcentajeDePrimerPago))
+        let segundoPago = this.props.costoTotal * ( 1 - (0.01 * porcentajeDePrimerPago))
         segundoPago = segundoPago.toFixed(2);
         document.getElementById('textoPrimerPago').innerHTML = `Primer pago hoy: $${primerPago} MXN`;
         document.getElementById('textoSegundoPago').innerHTML = `Segundo pago el día de entrada: $${segundoPago} MXN`;
@@ -77,11 +77,11 @@ class PanelDeReservacion extends React.Component {
         reservacion.pagoPendiente = segundoPago;
     }
     cambioSliderAnticipo() {
-        this.setState({porcentajeDePrimerPago: document.getElementById('anticipo').value})
-        document.getElementById('porcentajeDePrimerPago').innerHTML = this.state.porcentajeDePrimerPago + '%';
-        let primerPago = this.props.costoTotal * (0.01 * this.state.porcentajeDePrimerPago);
+        porcentajeDePrimerPago = document.getElementById('anticipo').value;
+        document.getElementById('porcentajeDePrimerPago').innerHTML = porcentajeDePrimerPago + '%';
+        let primerPago = this.props.costoTotal * (0.01 * porcentajeDePrimerPago);
         primerPago = primerPago.toFixed(2);
-        let segundoPago = this.props.costoTotal * ( 1 - (0.01 * this.state.porcentajeDePrimerPago));
+        let segundoPago = this.props.costoTotal * ( 1 - (0.01 * porcentajeDePrimerPago));
         segundoPago = segundoPago.toFixed(2);
         document.getElementById('textoPrimerPago').innerHTML = `Primer pago hoy: $${primerPago} MXN`;
         document.getElementById('textoSegundoPago').innerHTML = `Segundo pago el día de entrada: $${segundoPago} MXN`;
