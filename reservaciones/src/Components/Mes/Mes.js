@@ -43,7 +43,7 @@ class Mes extends React.Component {
                         fecha = new Date(this.props.anio, this.props.mes, diaDelMes)
                         // Si no determino la propieded de fecha en este loop e intento determinarla dentro del componente FechaCal
                         // entonces cada vez que cambie el mes, los valores de fecha no cambiaran solo el aspecto
-                        fila.push(<td key={`td${i}`} ><FechaCal key={fecha}  fecha={fecha} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida}  fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/></td>);
+                        fila.push(<td key={`td${i}`} ><FechaCal key={fecha}  fecha={fecha} fechaDeEntrada={this.props.fechaDeEntrada} fechaOcupadaMasCercanaAFechaDeEntrada={this.props.fechaOcupadaMasCercanaAFechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida}  fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/></td>);
                     }
                 } else {
                     fila.push(<td key={`td${i}`} ></td>)

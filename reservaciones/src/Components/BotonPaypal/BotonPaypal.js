@@ -102,9 +102,9 @@ class BotonPaypal extends React.Component {
     
             {pagado && (
               <div className="main">
-                <h2>
-                  Gracias por su pago
-                </h2>
+                <h2>Gracias por su pago!</h2>
+                  <h3>Un correo ha sido enviado a su email con los detalles de la reservación</h3>
+                  <h3>Estamos contentos de poder arenderlo, nos vemos pronto.</h3>
               </div>
             )}
           </div>

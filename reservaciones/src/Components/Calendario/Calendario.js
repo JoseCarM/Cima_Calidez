@@ -79,9 +79,9 @@ class Calendario extends React.Component {
           <h1>Seleccione sus fechas</h1>
           <div id="contenedorCalendario">
               <button onClick={this.mesAnterior}><img className='botonesCalendario' src={botonArribaImg} alt='Mes anterior'/></button>
-              <Mes mes={this.state.mesVisible} anio={this.state.anioVisible} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
+              <Mes mes={this.state.mesVisible} anio={this.state.anioVisible} fechaDeEntrada={this.props.fechaDeEntrada} fechaOcupadaMasCercanaAFechaDeEntrada={this.props.fechaOcupadaMasCercanaAFechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
               {/* Aqui hay codigo casi repetitivo, debo buscar una manera de hacerlo DRY */}
-              <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()} fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
+              <Mes mes={this.segundoMesVisible()} anio={this.segundoAnioVisible()} fechaDeEntrada={this.props.fechaDeEntrada} fechaOcupadaMasCercanaAFechaDeEntrada={this.props.fechaOcupadaMasCercanaAFechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoComparador={this.props.cambioDeEstadoComparador} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
               <button onClick={this.mesSiguiente}><img className='botonesCalendario' src={botonAbajoImg} alt='Mes siguiente'/></button>
           </div>
           <div id='fechaDeEntradaYSalida'> 

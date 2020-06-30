@@ -1,45 +1,82 @@
 import React from 'react';
+import numeroDeDiasEntreFechas from '../../util/numeroDeDiasEntreFechas'
 import './FechaCal.css';
 
 class FechaCal extends React.Component {
     constructor(props){
         super(props);
+        this.defineFechaMaximaDeSalida = this.defineFechaMaximaDeSalida.bind(this);
         this.seleccionarFecha = this.seleccionarFecha.bind(this);
         this.clasePorFecha = this.clasePorFecha.bind(this);
         this.IdEntradaOSalida = this.IdEntradaOSalida.bind(this);
     }
+    defineFechaMaximaDeSalida(){
+        if(this.props.fechasOcupadas.length > 0){
+            let fechaOcupadaMasCercana = null;
+            this.props.fechasOcupadas.forEach(fechaOcupada => {
+                if(fechaOcupada.getTime() > this.props.fecha.getTime()){
+                    if(fechaOcupadaMasCercana === null || numeroDeDiasEntreFechas(this.props.fecha, fechaOcupada) < numeroDeDiasEntreFechas(this.props.fecha, fechaOcupadaMasCercana)){
+                        fechaOcupadaMasCercana = fechaOcupada;
+                    }
+                }
+            })
+            this.props.cambioDeEstadoApp({fechaOcupadaMasCercanaAFechaDeEntrada: fechaOcupadaMasCercana})
+        }
+    }
     // Si no traslado la función original seleccionarFecha a una nueva dentro del mismo elemento, genero un loop infinito de setState
     seleccionarFecha() {
-        // Para poder trabajar la igualdad obtenemos su valor numerico 
-        if(this.props.fechasOcupadas.some(fechaOcupada => fechaOcupada.getTime() === this.props.fecha.getTime()) === false){
-            if(this.props.cambioDeEstadoComparador){
-                this.props.cambioDeEstadoComparador({
-                  resultados: [],
-                  nuevaBusqueda: true
-                })
-            }
+        //Borro los resultados de busqueda cuando vuelvo a hacer clic en las fechas
+        if(this.props.cambioDeEstadoComparador){
+            this.props.cambioDeEstadoComparador({
+              resultados: [],
+              nuevaBusqueda: true
+            })
+        }
+        // Si ya hay fechas seleccionadas, al hacer clic estas se borran para empezar de nuevo 
+        if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida !== null){
+            this.defineFechaMaximaDeSalida();
+            this.props.cambioDeEstadoApp({
+              fechaDeEntrada: null,
+              fechaDeSalida: null,
+              fechaOcupadaMasCercanaAFechaDeEntrada: null
+            })
+        //No puedo seleccionar las fechas ocupadas con respecto a la base de datos
+        } else if(this.props.fechasOcupadas.some(fechaOcupada => fechaOcupada.getTime() === this.props.fecha.getTime()) === false){
+            //Si aún no esta definida la fecha de entrada entonces se define
             if(this.props.fechaDeEntrada === null){
+                this.defineFechaMaximaDeSalida();
                 this.props.cambioDeEstadoApp({fechaDeEntrada: this.props.fecha});
             } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
-                if(this.props.fecha <= this.props.fechaDeEntrada){
-                  this.props.cambioDeEstadoApp({fechaDeEntrada: this.props.fecha})
-                } else {
-                  if(this.props.fechasOcupadas.some(fechaOcupada => (fechaOcupada > this.props.fechaDeEntrada && fechaOcupada < this.props.fecha))){
-                      alert('Hay fechas no disponibles dentro del rango que seleccionaste. Por favor selecciona una fecha de salida diferente.');
-                      this.props.cambioDeEstadoApp({
+                //Si ya esta definida la fecha de entrada pero no la de salida y selecciono una fecha previa a la fecha de entrada, esta sera la nueva fecha de entrada
+                if(this.props.fecha < this.props.fechaDeEntrada){
+                    this.defineFechaMaximaDeSalida();
+                    this.props.cambioDeEstadoApp({fechaDeEntrada: this.props.fecha})
+                //Si selecciono la fecha de entrada ya definida previamente, esta se deseleccionará
+                } else if(this.props.fecha.getTime() === this.props.fechaDeEntrada.getTime()){
+                    this.props.cambioDeEstadoApp({
                         fechaDeEntrada: null,
-                        fechaDeSalida: null
-                      })
-                  } else {
+                        fechaOcupadaMasCercanaAFechaDeEntrada: null
+                    })
+                } else {
+                //Como fecha de salida solo puedo seleccionar fechas anteriores o iguales a la fecha ocupada mas cercana a la fecha de entrada
+                  if(this.props.fecha <= this.props.fechaOcupadaMasCercanaAFechaDeEntrada){
                     this.props.cambioDeEstadoApp({fechaDeSalida: this.props.fecha})
                     document.getElementById('presentacionDeHuespedes').scrollIntoView({behavior: "smooth"});
                   } 
                 }
-            } else if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida !== null){
-                this.props.cambioDeEstadoApp({
-                  fechaDeEntrada: this.props.fecha,
-                  fechaDeSalida: null
-                })
+            } 
+        } else if(this.props.fechaOcupadaMasCercanaAFechaDeEntrada){
+            //Puedo seleccionar como fecha de salida la fecha ocupada más cercana la fecha de entrada, un cliente sale y otro entra
+            if(this.props.fecha.getTime() === this.props.fechaOcupadaMasCercanaAFechaDeEntrada.getTime() && this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
+                this.props.cambioDeEstadoApp({fechaDeSalida: this.props.fecha})
+                document.getElementById('presentacionDeHuespedes').scrollIntoView({behavior: "smooth"});
+            }
+        }
+        //Si no existen fechas ocupadas posteriores a la fecha de entrada, puedo escoger cualquier fecha
+        if(!this.props.fechaOcupadaMasCercanaAFechaDeEntrada){
+            if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
+                this.props.cambioDeEstadoApp({fechaDeSalida: this.props.fecha})
+                document.getElementById('presentacionDeHuespedes').scrollIntoView({behavior: "smooth"});
             }
         }
     }
@@ -52,6 +89,10 @@ class FechaCal extends React.Component {
         for(let i = 0; i < this.props.fechasOcupadas.length; i++){
             // Para poder trabajar la igualdad obtenemos su valor numerico 
             if(this.props.fechasOcupadas[i].getTime() === this.props.fecha.getTime()){fechaReservada = true}
+        }
+        if(this.props.fechaOcupadaMasCercanaAFechaDeEntrada){
+            if(this.props.fecha > this.props.fechaOcupadaMasCercanaAFechaDeEntrada){fechaReservada = true}
+            if(this.props.fecha.getTime() === this.props.fechaOcupadaMasCercanaAFechaDeEntrada.getTime()){fechaReservada = false}
         }
         if(this.props.fecha < fechaActual){
             return 'fechasPasadas';

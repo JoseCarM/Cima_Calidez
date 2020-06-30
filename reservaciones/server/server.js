@@ -5,6 +5,7 @@ const sqlite3 = require('sqlite3');
 const bodyParser = require('body-parser');
 const app = express();
 const jsToSqlDate = require('../src/util/NodeToSQLDateParser.js');
+const nodemailer = require('nodemailer');
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
@@ -88,6 +89,30 @@ app.post('/reservacion', function(req, res) {
             console.log(error.message);
             return res.status(400).send(error);
         }else{
+            if(datos.estatus === 'Confirmada'){
+                let transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'cimacalidez.info@gmail.com',
+                        pass: 'ux}W8yYk]bfx'
+                    }
+                });
+        
+                let mailOptions = {
+                    from: 'cimacalidez.info@gmail.com',
+                    to: 'cimacalidez@gmail.com',
+                    subject: 'prueba',
+                    text: 'Pruebasssssss'
+                }
+        
+                transporter.sendMail(mailOptions, function(err, data){
+                    if(err){
+                        console.log('Hay un error, no se envio el correo:', err.message);
+                    } else {
+                        console.log('Email enviado')
+                    }
+                })
+            }
             return res.send(`Se publicó la reservación con ID ${this.lastID}`);
         } 
     })

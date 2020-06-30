@@ -21,7 +21,7 @@ class Cabana extends React.Component {
         return(
             <div id='cabana'>
                 <div id='cabanaOpciones'>
-                    <Calendario fechaDeEntrada={this.props.fechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoApp={this.props.cambioDeEstadoApp} />
+                    <Calendario fechaDeEntrada={this.props.fechaDeEntrada} fechaOcupadaMasCercanaAFechaDeEntrada={this.props.fechaOcupadaMasCercanaAFechaDeEntrada} fechaDeSalida={this.props.fechaDeSalida} fechasOcupadas={this.props.fechasOcupadas} cambioDeEstadoApp={this.props.cambioDeEstadoApp} />
                     <CantidadDeHuespedes huespedes={this.props.huespedes} cambioDeEstadoApp={this.props.cambioDeEstadoApp}/>
                 </div>
                 <div id='cabanaInformacion'>

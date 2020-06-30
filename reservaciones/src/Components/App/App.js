@@ -19,6 +19,7 @@ class App extends React.Component {
       cabana: null,
       fechasOcupadas: [],
       fechaDeEntrada: null,
+      fechaOcupadaMasCercanaAFechaDeEntrada: null,
       fechaDeSalida: null,
       huespedes: {
         numeroDeAdultos: 2,
@@ -136,7 +137,7 @@ class App extends React.Component {
         return(
           <div id='app'>
             <Menu cambioDeEstadoApp={this.cambioDeEstadoApp} />
-            <Cabana cabana={this.state.cabana} fechaDeEntrada={this.state.fechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} huespedes={this.state.huespedes} preciosBase={this.state.preciosBase} minimoDeHuespedes={this.state.minimoDeHuespedes} maximoDeHuespedes={this.state.maximoDeHuespedes} fechasOcupadas={this.state.fechasOcupadas} cambioDeEstadoApp={this.cambioDeEstadoApp}/>
+            <Cabana cabana={this.state.cabana} fechaDeEntrada={this.state.fechaDeEntrada} fechaOcupadaMasCercanaAFechaDeEntrada={this.state.fechaOcupadaMasCercanaAFechaDeEntrada} fechaDeSalida={this.state.fechaDeSalida} huespedes={this.state.huespedes} preciosBase={this.state.preciosBase} minimoDeHuespedes={this.state.minimoDeHuespedes} maximoDeHuespedes={this.state.maximoDeHuespedes} fechasOcupadas={this.state.fechasOcupadas} cambioDeEstadoApp={this.cambioDeEstadoApp}/>
           </div>
         )
       }

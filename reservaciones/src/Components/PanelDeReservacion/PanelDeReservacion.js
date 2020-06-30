@@ -11,8 +11,11 @@ import portadaCab4 from '../../imagenes/portadaCab4.png'
 import portadaCab5 from '../../imagenes/portadaCab5.png'
 import BotonPaypal from '../BotonPaypal/BotonPaypal';
 let imagenesDePortada = ['', portadaCab1, portadaCab2, portadaCab3, portadaCab4, portadaCab5];
+
 let porcentajeDePrimerPago = 50;
+
 let reservacionTemporal = {};
+
 function cancelarReservacion(datos){
     let url = `http://192.168.1.70:8080/reservacion`;
     fetch(url, {
@@ -47,7 +50,7 @@ class PanelDeReservacion extends React.Component {
     renderCabanas(){
         let cabanas = [];
         for(let i = 0; i < this.props.cabanasARentar.length; i++){
-            cabanas.push(<div key={this.props.cabanasARentar[i]} className='cabanasARentar'><h2>Cabaña {nombreDeCabana(this.props.cabanasARentar[i])}</h2><img src={imagenesDePortada[this.props.cabanasARentar[i]]} alt='imagen de portada de cabaña'/></div>);
+            cabanas.push(<div key={this.props.cabanasARentar[i]} className='cabanasARentar'><h4>Cabaña <br/>{nombreDeCabana(this.props.cabanasARentar[i])}</h4><img src={imagenesDePortada[this.props.cabanasARentar[i]]} alt='imagen de portada de cabaña'/></div>);
         }
         return cabanas;
     }
@@ -87,7 +90,6 @@ class PanelDeReservacion extends React.Component {
         reservacionTemporal.pagoPendiente = Number(segundoPago);
     }
     regresar(){
-        console.log(reservacionTemporal.codigoDeReservacion)
         cancelarReservacion(reservacionTemporal);
         this.props.cambioDeEstadoApp({listoParaReservar: false, costoTotal: '', cabanasARentar: null})
     }
@@ -115,22 +117,22 @@ class PanelDeReservacion extends React.Component {
                         <h1>Informacion de la reservación</h1>
                         <div id='contenedorCabanasARentar'>{this.renderCabanas()}</div>
                         <div>
-                            <h3>Entrada: {fechaLarga(this.props.fechaDeEntrada)}, 4:00pm hora local</h3>
-                            <h3>Salida: {fechaLarga(this.props.fechaDeSalida)}, 12:00pm hora local</h3>
+                            <h4>Entrada: {fechaLarga(this.props.fechaDeEntrada)}, 4:00pm hora local</h4>
+                            <h4>Salida: {fechaLarga(this.props.fechaDeSalida)}, 12:00pm hora local</h4>
                         </div>
-                        <div>
-                            {(huespedes.numeroDeAdultos > 0)? <h3>Adultos: {huespedes.numeroDeAdultos}</h3> : ''}
-                            {(huespedes.numeroDeNinos > 0)? <h3>Niños: {huespedes.numeroDeNinos}</h3> : ''}
-                            {(huespedes.numeroDeBebes > 0)? <h3>Bebes: {huespedes.numeroDeBebes}</h3> : ''}
-                            {(huespedes.numeroDeMascotas > 0)? <h3>Mascotas: {huespedes.numeroDeMascotas}</h3> : ''}  
+                        <div id='huespedesDatosDeReservacion'>
+                            {(huespedes.numeroDeAdultos > 0)? <h4>Adultos: {huespedes.numeroDeAdultos}</h4> : ''}
+                            {(huespedes.numeroDeNinos > 0)? <h4> / Niños: {huespedes.numeroDeNinos}</h4> : ''}
+                            {(huespedes.numeroDeBebes > 0)? <h4> / Bebes: {huespedes.numeroDeBebes}</h4> : ''}
+                            {(huespedes.numeroDeMascotas > 0)? <h4> / Mascotas: {huespedes.numeroDeMascotas}</h4> : ''}  
                         </div>
-                        <h3>Total a pagar: ${this.props.costoTotal} MXN</h3>
                         {!this.state.datosDeUsuarioValidos && (
-                            <form>
-                                <p>Selecciones un porcentaje de anticipo</p><input type='range' min='50' max='100' id='anticipo' name='anticipo' onChange={this.cambioSliderAnticipo}></input>
+                            <form id='formAnticipo'>
+                                <h4>Selecciones un porcentaje de anticipo</h4><input type='range' min='50' max='100' id='anticipo' name='anticipo' onChange={this.cambioSliderAnticipo}></input>
                                 <label htmlFor='anticipo' id='porcentajeDePrimerPago'></label>
                             </form>
                         )}
+                        <h3>Total a pagar: ${this.props.costoTotal} MXN</h3>
                         <h4 id='textoPrimerPago'>Primer pago hoy: ${reservacionTemporal.primerPago} MXN</h4>
                         <h4 id='textoSegundoPago'>Segundo pago el día de entrada: ${reservacionTemporal.segundoPago} MXN</h4>
                     </section>
@@ -150,18 +152,20 @@ class PanelDeReservacion extends React.Component {
                                 <br/>
                                 <input type='email' id='correoElectronico' required></input>
                                 <br/>
-                                <input type='checkbox' id='aceptaReglamento' name='aceptaReglamento' required></input><label htmlFor='aceptaReglamento'>He leido y acepto el Reglamento interno de Cima Calidez</label>
+                                <input type='checkbox' id='aceptaReglamento' name='aceptaReglamento' required></input><label htmlFor='aceptaReglamento' id='labelAceptaReglamento'>He leido y acepto el Reglamento interno de Cima Calidez</label>
                                 <br/>
-                                <input type='button' value='Continuar a pago' onClick={this.continuarAPaypal}></input>
+                                <div id='divBotonContinuarAPaypal'>
+                                    <input type='button' value='Continuar a pago' onClick={this.continuarAPaypal}></input>
+                                </div>
                             </form>
                         )}
                         {this.state.datosDeUsuarioValidos && (
-                            <div>
-                                <h2>Nombre: {this.state.reservacion.nombre}</h2>
+                            <div id='datosClienteValidados'>
+                                <h3>Nombre: {this.state.reservacion.nombre}</h3>
                                 <br/>
-                                <h2>Teléfono: {this.state.reservacion.telefono}</h2>
+                                <h3>Teléfono: {this.state.reservacion.telefono}</h3>
                                 <br/>
-                                <h2>email: {this.state.reservacion.correoElectronico}</h2>
+                                <h3>email: {this.state.reservacion.correoElectronico}</h3>
                                 <br/>
                                 <button onClick={() => this.setState({datosDeUsuarioValidos: false})}>Editar</button>
                             </div>
