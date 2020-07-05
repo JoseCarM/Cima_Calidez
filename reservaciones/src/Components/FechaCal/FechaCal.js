@@ -72,9 +72,9 @@ class FechaCal extends React.Component {
                 document.getElementById('presentacionDeHuespedes').scrollIntoView({behavior: "smooth"});
             }
         }
-        //Si no existen fechas ocupadas posteriores a la fecha de entrada, puedo escoger cualquier fecha
+        //Si no existen fechas ocupadas posteriores a la fecha de entrada, puedo escoger cualquier fecha, menos la fecha de entrada
         if(!this.props.fechaOcupadaMasCercanaAFechaDeEntrada){
-            if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null){
+            if(this.props.fechaDeEntrada !== null && this.props.fechaDeSalida === null && this.props.fecha > this.props.fechaDeEntrada){
                 this.props.cambioDeEstadoApp({fechaDeSalida: this.props.fecha})
                 document.getElementById('presentacionDeHuespedes').scrollIntoView({behavior: "smooth"});
             }

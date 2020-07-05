@@ -21,6 +21,9 @@
     flex-flow: column;
     padding-bottom: 10px;
 }
+.opcionesResultadosCombinados:hover .portadasResultados{
+    clip-path: circle(70%);
+}
 
 @media screen and (max-width: 560px){
     .cabanasDeOpcion{

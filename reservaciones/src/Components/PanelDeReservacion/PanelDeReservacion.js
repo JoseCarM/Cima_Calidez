@@ -10,6 +10,7 @@ import portadaCab3 from '../../imagenes/portadaCab3.png'
 import portadaCab4 from '../../imagenes/portadaCab4.png'
 import portadaCab5 from '../../imagenes/portadaCab5.png'
 import BotonPaypal from '../BotonPaypal/BotonPaypal';
+
 let imagenesDePortada = ['', portadaCab1, portadaCab2, portadaCab3, portadaCab4, portadaCab5];
 
 let porcentajeDePrimerPago = 50;

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import scriptLoader from 'react-async-script-loader';
 import './BotonPaypal.css';
+import iconoCargando from '../../imagenes/cargando.svg'
 
 
 let Paypal = null;
@@ -79,14 +80,15 @@ class BotonPaypal extends React.Component {
 
     render(){
         const { botonVisible, cargando, pagado } = this.state;
-        if(this.props.visibilidad && botonVisible){
+        if(this.props.visibilidad){
+          //Función asyncrona para eviatar cambiar atributos antes de que exista
             setTimeout(() => {
                 let seccionPaypal = document.getElementById('seccionPaypal');
                 seccionPaypal.style.height = '120px';
                 seccionPaypal.style.marginTop = '20px';
                 seccionPaypal.style.opacity = 1;
                 seccionPaypal.scrollIntoView({behavior: "smooth"});
-            }, 2000)
+            }, 0)
         }
         return (
           <div className="main">
@@ -97,6 +99,12 @@ class BotonPaypal extends React.Component {
                   createOrder={(data, actions) => this.createOrder(data, actions)}
                   onApprove={(data, actions) => this.onApprove(data, actions)}
                 />
+              </div>
+            )}
+{/* Solo por si acaso aún no ha cargado antes de ser mostrado */}
+            {cargando &&(
+              <div>
+                <img id='iconoCargando' src={iconoCargando} alt='cargando'/>
               </div>
             )}
     

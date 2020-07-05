@@ -26,7 +26,7 @@
     transition: all 1s;
 }
 
-.portadasResultados:hover {
+.resultados:hover .portadasResultados{
     clip-path: circle(70%);
 }
 

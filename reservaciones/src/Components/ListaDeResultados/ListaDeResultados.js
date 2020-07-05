@@ -44,21 +44,30 @@ class ListaDeResultados extends React.Component {
         let maximoDeHuespedesDisponible = 0;
         let cabana;
         this.props.resultados.forEach(numero => {
-            if(this.props.maximoDeHuespedes[`cabana${numero}`] > maximoDeHuespedesDisponible){
-                maximoDeHuespedesDisponible = this.props.maximoDeHuespedes[`cabana${numero}`];
-                cabana = `Cabaña ${numero}`
+            if(this.props.busquedaCombinada === false){
+                if(this.props.maximoDeHuespedes[`cabana${numero}`] > maximoDeHuespedesDisponible){
+                    maximoDeHuespedesDisponible = this.props.maximoDeHuespedes[`cabana${numero}`];
+                    cabana = `Cabaña ${numero}`
+                }
+            } else {
+                const reductor = (acumulador, numero) => acumulador + this.props.maximoDeHuespedes[`cabana${numero}`];
+                maximoDeHuespedesDisponible = this.props.resultados.reduce(reductor, 0)
             }
         })
         if(this.props.resultados.length === 0 && this.props.nuevaBusqueda === false){
             return <div className='mensajes'><h2>Lo sentimos, no hay cabañas disponibles para ese rango de fechas y la cantidad de huespedes señalados</h2></div>
-        } else if (maximoDeHuespedesDisponible !== 0 && this.props.huespedes.numeroDeAdultos + this.props.huespedes.numeroDeNinos > maximoDeHuespedesDisponible && this.props.resultados.length > 1 && this.props.busquedaCombinada === false){
-        return (
-            <div className='mensajes'>
-                <h2>La cabaña disponible para estas fechas con mayor capacidad es la {cabana}, que tiene una capacidad máxima de {maximoDeHuespedesDisponible} huespedes contando adultos y niños</h2>
-                <br/>
-                <h2>Haz click en "Cambiar a busqueda combinada", donde te ofrecemos varias cabañas para alojar a todos los huespedes</h2>
-            </div>
-        )
+        } else if (maximoDeHuespedesDisponible !== 0 && this.props.huespedes.numeroDeAdultos + this.props.huespedes.numeroDeNinos > maximoDeHuespedesDisponible && this.props.resultados.length > 1){
+            if(this.props.busquedaCombinada === false){
+                return (
+                    <div className='mensajes'>
+                        <h2>La cabaña disponible para estas fechas con mayor capacidad es la {cabana}, que tiene una capacidad máxima de {maximoDeHuespedesDisponible} huespedes contando adultos y niños</h2>
+                        <br/>
+                        <h2>Haz click en "Cambiar a busqueda combinada", donde te ofrecemos varias cabañas para alojar a todos los huespedes</h2>
+                    </div>
+                )
+            } else {
+                return <div className='mensajes'><h2>Lo sentimos, no hay cabañas disponibles para ese rango de fechas y la cantidad de huespedes señalados</h2></div>
+            }
         }
     }
     render(){
