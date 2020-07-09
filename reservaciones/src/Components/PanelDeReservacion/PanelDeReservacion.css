@@ -1,164 +1,182 @@
 #panelDeReservacion {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: hsla(0, 0%, 100%, 0.8);
-    transition: all 2s;
-    opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  transition: all 2s;
+  opacity: 0;
 }
 
-#botonRegresar{
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    background-color: rgb(0, 71, 18);
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
+#botonRegresar {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-color: rgb(0, 71, 18);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
 #botonRegresar:hover {
-    background-color: rgb(136, 109, 0);
+  background-color: rgb(136, 109, 0);
 }
 
 #reservacion {
-    display: flex;
-    align-items: center;
-    transition: all 2s;
+  display: flex;
+  align-items: center;
+  transition: all 2s;
 }
 
 #datosDeReservacion {
-    display: flex;
-    flex-flow: column;
-    width: 50%;
-    align-items: center;
-    border-right: gray 2px dotted;
-    margin-top: 30px;
-    padding: 5px;
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  align-items: center;
+  border-right: gray 2px dotted;
+  margin-top: 30px;
+  padding: 5px;
 }
 
-#datosDeReservacion h1, h3, h4, p{
-    text-align: center;
-    margin: 5px;
+#datosDeReservacion h1,
+h3,
+h4,
+p {
+  text-align: center;
+  margin: 5px;
 }
 
 #huespedesDatosDeReservacion {
-    display: flex;
+  display: flex;
 }
 
 #formAnticipo {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #datosDelCliente {
-    display: flex;
-    flex-flow: column;
-    width: 50%;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  align-items: center;
 }
 
 #formDatosDelCliente {
-    padding: 5px;
+  padding: 5px;
 }
 
 #datosDelCliente input {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-input#nombre, input#telefono, input#correoElectronico{
-    width: 95%;
+input#nombre,
+input#telefono,
+input#correoElectronico {
+  width: 95%;
 }
 
 .cabanasARentar {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 20%;
-    text-align: center;
-    font-size: 0.9rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 20%;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-.cabanasARentar img{
-    width: 95%;
-    border-radius: 5%;
+.cabanasARentar img {
+  width: 95%;
+  border-radius: 5%;
 }
 
 #contenedorCabanasARentar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #labelAceptaReglamento {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 #divBotonContinuarAPaypal {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-#divBotonContinuarAPaypal input, #datosClienteValidados button {
-    background-color: rgb(0, 71, 18);
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
+#divBotonContinuarAPaypal input,
+#datosClienteValidados button {
+  background-color: rgb(0, 71, 18);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
-#divBotonContinuarAPaypal input:hover, #datosClienteValidados button:hover {
-    background-color: rgb(136, 109, 0);
+#divBotonContinuarAPaypal input:hover,
+#datosClienteValidados button:hover {
+  background-color: rgb(136, 109, 0);
 }
 
 #divBotonContinuarAPaypal input:active {
-    background-color: rgb(53, 14, 0);   
+  background-color: rgb(53, 14, 0);
 }
 
 #divBotonContinuarAPaypal input:focus {
-    outline: none;
-    transition: all 0.1s;
+  outline: none;
+  transition: all 0.1s;
 }
 
 #datosClienteValidados {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
+#seccionPaypal {
+  width: 0px;
+  height: 0px;
+  transition: all 1s;
+  opacity: 0;
+}
 
-#seccionPaypal{
+@media screen and (max-width: 900px) {
+  #panelDeReservacion {
+    flex-direction: column;
+  }
+
+  #reservacion {
+    flex-flow: column;
+  }
+
+  #datosDeReservacion {
+    border-right: none;
+    border-bottom: gray 2px dotted;
+  }
+
+  #datosDeReservacion {
+    width: 100%;
+  }
+
+  #datosDelCliente {
+    width: 100%;
+  }
+
+  #seccionPaypal {
+    margin-top: 10px;
+    width: 0px;
     height: 0px;
     transition: all 1s;
     opacity: 0;
-}
-
-@media screen and (max-width: 900px){
-    #reservacion {
-        flex-flow: column;
-    }
-
-    #datosDeReservacion {
-        border-right: none;
-        border-bottom: gray 2px dotted;
-    }
-
-    #datosDeReservacion {
-        width: 100%;
-    }
-
-    #datosDelCliente {
-        width: 100%;
-    }
+  }
 }

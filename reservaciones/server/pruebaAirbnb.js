@@ -13,7 +13,6 @@ async function totis() {
   const response = await fetch(
     "https://www.airbnb.mx/calendar/ical/11378940.ics?s=64135998a07eaff8ae24522b646bf161"
   );
-  //const file = await response.buffer();
   if (!response.ok){
     throw new Error(`unexpected response ${response.statusText}`);
   }

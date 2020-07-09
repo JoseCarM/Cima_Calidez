@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+PRODID;X-RICAL-TZSOURCE=TZINFO:-//Airbnb Inc//Hosting Calendar 0.8.8//EN
+CALSCALE:GREGORIAN
+VERSION:2.0
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200719
+DTSTART;VALUE=DATE:20200717
+UID:1418fb94e984-4f8fc1aeb5eae7928dbcbb4a6c936e04@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HM8XZNCBPA\nPhone Number (Last 4 Digits): 5670
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200726
+DTSTART;VALUE=DATE:20200724
+UID:1418fb94e984-d4eec4c4860376beb67f6dcb035b3daa@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMNP4WXPWF\nPhone Number (Last 4 Digits): 8142
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200807
+DTSTART;VALUE=DATE:20200804
+UID:1418fb94e984-69fc34486fbffc42cda819584703f39a@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMZBJZWNAQ\nPhone Number (Last 4 Digits): 7211
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200809
+DTSTART;VALUE=DATE:20200807
+UID:1418fb94e984-66ea764957decd15f52ae7d9a778c0c5@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMQCXMKBFZ\nPhone Number (Last 4 Digits): 2719
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200816
+DTSTART;VALUE=DATE:20200814
+UID:1418fb94e984-168e9d1c81e2f8f45d77238d2bb51d83@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMPD2MWZWE\nPhone Number (Last 4 Digits): 8504
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200830
+DTSTART;VALUE=DATE:20200828
+UID:1418fb94e984-90936fbcc379dbcfef13ce312fa1a30b@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMWP8JXCAF\nPhone Number (Last 4 Digits): 1022
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200906
+DTSTART;VALUE=DATE:20200904
+UID:1418fb94e984-7120bcd9b6e17d1b80f28dc0a11bf308@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HM5T3M399A\nPhone Number (Last 4 Digits): 7990
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200914
+DTSTART;VALUE=DATE:20200912
+UID:1418fb94e984-e7fd3eaf4632b8bc81f2e7eef385e723@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMFZ252DNW\nPhone Number (Last 4 Digits): 3877
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20201018
+DTSTART;VALUE=DATE:20201016
+UID:1418fb94e984-6b632011e7a64bac78ace4550996bd36@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HM39KCMFRQ\nPhone Number (Last 4 Digits): 1352
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20201114
+DTSTART;VALUE=DATE:20201110
+UID:1418fb94e984-1777a3b26ec0f4e8c6cfc2cb73959a52@airbnb.com
+DESCRIPTION:Reservation URL: https://www.airbnb.com/reservation/itinerary
+ ?code=HMTXX59CRR\nPhone Number (Last 4 Digits): 8005
+SUMMARY:Reserved
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200708
+DTSTART;VALUE=DATE:20200707
+UID:6fec1092d3fa-21c4d040d15c46fdd9391f6a5903f091@airbnb.com
+SUMMARY:Airbnb (Not available)
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200713
+DTSTART;VALUE=DATE:20200710
+UID:6fec1092d3fa-197c691bf838ece431e0f7b4eca00e08@airbnb.com
+SUMMARY:Airbnb (Not available)
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20200823
+DTSTART;VALUE=DATE:20200821
+UID:6fec1092d3fa-27bf8191e6617fdd7f7cb0eadaa290d4@airbnb.com
+SUMMARY:Airbnb (Not available)
+END:VEVENT
+END:VCALENDAR

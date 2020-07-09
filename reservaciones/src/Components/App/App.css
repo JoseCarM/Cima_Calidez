@@ -29,6 +29,36 @@ tbody {
   background-color: white;
 }
 
+#divCentro{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+}
+
+#cargandoPaginaPrincipal {
+  width: 100px;
+  animation: rotation 1s infinite linear;
+  opacity: 0.7;
+}
+
+#botonVolverABuscar{
+  background-color: rgb(0, 71, 18);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#botonVolverABuscar:hover{
+  background-color: rgb(136, 109, 0);
+}
+
+
 
 @media screen and (max-width: 560px){
   table{

@@ -6,12 +6,25 @@
     width: 100px;
     height: 30px;
     border-radius: 15px;
-    transition: all 0.08s;
+    transition: all 0.4s;
     margin-top: 5px;
     cursor: pointer;
 }
 
-#botonBuscar:active {
-    background-color: rgb(27, 78, 40);
-    font-size: 0.9rem;
+#cargandoBotonBuscar {
+  background-color: rgb(187, 150, 0);
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  transition: all 0.4s;
+  margin-top: 5px;
+  cursor: wait;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iconoCargandoBotonBuscar {
+    width: 80%;
+    animation: rotation 0.7s infinite linear;
 }
