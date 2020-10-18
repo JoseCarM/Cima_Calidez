@@ -45,8 +45,9 @@
     width: 150px;
     height: 150px;
     margin: 5px;
-    transition: all 0.5s;
+    transition: all 1s;
     opacity: 1;
+    cursor: pointer;
 }
 .itemsDeMenu:hover{
     background-color: hsl(108, 100%, 84%);
@@ -73,17 +74,19 @@
 }
 
 .itemsDeMenu img{
-    transition: all 0.5s;
+    transition: all 1.4s;
     width: 50px;
     user-select: none;
+    pointer-events: none;
 }
 
 .itemsDeMenu p{
     font-size: 1rem;
     font-weight: 700;
     color: rgb(0, 71, 18);
-    transition: all 0.5s;
+    transition: all 1.5s;
     user-select: none;
+    pointer-events: none;
 }
 
 .itemsDeMenu:hover p{

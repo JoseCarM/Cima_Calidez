@@ -25,7 +25,7 @@ let porcentajeDePrimerPago = 50;
 let reservacionTemporal = {};
 
 function cancelarReservacion(datos) {
-  let url = `http://192.168.1.70:8080/reservacion`;
+  let url = `http://192.168.1.74:8080/reservacion`;
   fetch(url, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ class PanelDeReservacion extends React.Component {
     this.setState(objeto);
   }
   async registrarReservacion(datos) {
-    let url = `http://192.168.1.70:8080/reservacion`;
+    let url = `http://192.168.1.74:8080/reservacion`;
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

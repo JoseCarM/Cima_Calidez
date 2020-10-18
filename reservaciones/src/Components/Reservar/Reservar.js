@@ -12,7 +12,7 @@ class Reservar extends React.Component {
     let fechaDeSalida = this.props.fechaDeSalida;
     let cabanasARentar = this.props.cabanasARentar;
     let precio = this.props.precio;
-    let url = `http://192.168.1.70:8080/verificador?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}&cabanasARentar=${cabanasARentar}`;
+    let url = `http://192.168.1.74/verificador?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}&cabanasARentar=${cabanasARentar}`;
     const response = await fetch(url);
     let aunDisponible = await response.json();
     if (aunDisponible === "Disponible") {

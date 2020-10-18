@@ -75,7 +75,7 @@ class App extends React.Component {
   }
   async buscaFechasOcupadas() {
     //Iniciamos nuestra consulta
-    let url = `http://192.168.1.70:8080/disponibilidad_de_cabana?cabana=${this.state.cabana}`;
+    let url = `http://192.168.1.74:8080/disponibilidad_de_cabana?cabana=${this.state.cabana}`;
     if (this.state.cabana !== null) {
       const response = await fetch(url);
       const jsonResponse = await response.json();

@@ -2,6 +2,9 @@ import React from "react";
 import "./Buscar.css";
 import iconoCargando from "../../imagenes/cargando.svg";
 
+// Acciones
+import { getCabanasDisponibles } from '../../redux/Actions/ComparadorActions'
+
 class Buscar extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +14,7 @@ class Buscar extends React.Component {
   async buscar() {
     let fechaDeEntrada = this.props.fechaDeEntrada;
     let fechaDeSalida = this.props.fechaDeSalida;
-    let url = `http://192.168.1.70:8080/comparador?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=${fechaDeSalida}`;
+    let url = `http://192.168.1.74:8080/comparador?fechaDeEntrada=${fechaDeEntrada}&fechaDeSalida=$fechaDeSalida}`;
     if (fechaDeEntrada !== null && fechaDeSalida !== null) {
       this.setState({ cargando: true });
       const response = await fetch(url);
@@ -54,3 +57,4 @@ class Buscar extends React.Component {
 }
 
 export default Buscar;
+
